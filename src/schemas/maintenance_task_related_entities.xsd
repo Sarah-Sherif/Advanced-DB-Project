@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="Maintenance_Task">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Task_ID" type="xs:unsignedInt"/>
+        <xs:element name="Task_Date" type="xs:date"/>
+        <xs:element name="Price" type="xs:float"/>
+        <xs:element name="Center_ID" type="xs:unsignedInt"/>
+        <xs:element name="Plate_NO" type="xs:string"/>
+        <xs:element name="Order_ID" type="xs:unsignedInt"/>
+        <xs:element name="Component_Model" type="xs:string"/>
+      </xs:sequence>
+      <xs:attribute name="Task_ID" type="xs:unsignedInt"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Performs">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="SSN" type="xs:string"/>
+        <xs:element name="Task_ID" type="xs:unsignedInt"/>
+      </xs:sequence>
+      <xs:attribute name="SSN" type="xs:string"/>
+      <xs:attribute name="Task_ID" type="xs:unsignedInt"/>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>

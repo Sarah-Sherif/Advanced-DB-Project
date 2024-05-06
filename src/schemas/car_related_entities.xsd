@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="Model">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Model_Name" type="xs:string"/>
+        <xs:element name="Model_Year" type="xs:gYear"/>
+        <xs:element name="Brand" type="xs:string"/>
+      </xs:sequence>
+      <xs:attribute name="Model_Name" type="xs:string"/>
+      <xs:attribute name="Model_Year" type="xs:gYear"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Car">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Plate_NO" type="xs:string"/>
+        <xs:element name="Model_Name" type="xs:string"/>
+        <xs:element name="Model_Year" type="xs:gYear"/>
+        <xs:element name="SSN" type="xs:string"/>
+      </xs:sequence>
+      <xs:attribute name="Plate_NO" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>

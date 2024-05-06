@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:complexType name="OrderType">
+    <xs:sequence>
+      <xs:element name="Order_ID" type="xs:unsignedInt"/>
+      <xs:element name="Status" type="StatusType"/>
+      <xs:element name="Payment_Method" type="PaymentMethodType"/>
+      <xs:element name="Date" type="xs:date"/>
+      <xs:element name="Total_Cost" type="xs:float"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Repair_Order">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="OrderType">
+          <xs:sequence>
+            <xs:element name="C_SSN" type="xs:string"/>
+            <xs:element name="City" type="xs:string"/>
+            <xs:element name="Street_NO" type="xs:unsignedShort"/>
+            <xs:element name="Building_NO" type="xs:unsignedInt"/>
+            <xs:element name="District" type="xs:string"/>
+          </xs:sequence>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Purchase_Order">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="OrderType">
+          <xs:sequence>
+            <xs:element name="Delivery_Date" type="xs:date"/>
+            <xs:element name="S_SSN" type="xs:string"/>
+          </xs:sequence>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:simpleType name="StatusType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Delivered"/>
+      <xs:enumeration value="In Progress"/>
+      <xs:enumeration value="Completed"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="PaymentMethodType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Cash"/>
+      <xs:enumeration value="Credit"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:element name="Consist_OF">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Order_ID" type="xs:unsignedInt"/>
+        <xs:element name="Component_Model" type="xs:string"/>
+        <xs:element name="Quantity" type="xs:unsignedShort"/>
+      </xs:sequence>
+      <xs:attribute name="Order_ID" type="xs:unsignedInt"/>
+      <xs:attribute name="Component_Model" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>

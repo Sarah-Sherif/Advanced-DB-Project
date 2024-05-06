@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="Component">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Model" type="xs:string"/>
+        <xs:element name="Price" type="xs:float"/>
+      </xs:sequence>
+      <xs:attribute name="Model" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Offers">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Component_Model" type="xs:string"/>
+        <xs:element name="S_SSN" type="xs:string"/>
+      </xs:sequence>
+      <xs:attribute name="Component_Model" type="xs:string"/>
+      <xs:attribute name="S_SSN" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Body">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Model" type="xs:string"/>
+        <xs:element name="Chassis_Type" type="ChassisType"/>
+      </xs:sequence>
+      <xs:attribute name="Model" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Battery">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Model" type="xs:string"/>
+        <xs:element name="Expiry_Date" type="xs:date"/>
+      </xs:sequence>
+      <xs:attribute name="Model" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Transmission">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Model" type="xs:string"/>
+        <xs:element name="Transmission_Type" type="TransmissionType"/>
+      </xs:sequence>
+      <xs:attribute name="Model" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Engine">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Model" type="xs:string"/>
+        <xs:element name="Lubricant_Type" type="xs:string"/>
+        <xs:element name="Horse_Power" type="xs:unsignedShort"/>
+      </xs:sequence>
+      <xs:attribute name="Model" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:simpleType name="ChassisType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Sedan"/>
+      <xs:enumeration value="Hatchback"/>
+      <xs:enumeration value="SUV"/>
+      <xs:enumeration value="Coupe"/>
+      <xs:enumeration value="Van"/>
+      <xs:enumeration value="Truck"/>
+      <xs:enumeration value="Convertible"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="TransmissionType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Automatic"/>
+      <xs:enumeration value="Manual"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+</xs:schema>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:complexType name="PersonType">
+    <xs:sequence>
+      <xs:element name="SSN" type="xs:string"/>
+      <xs:element name="Birthdate" type="xs:date"/>
+      <xs:element name="Email" type="xs:string"/>
+      <xs:element name="First_Name" type="xs:string"/>
+      <xs:element name="Middle_Name" type="xs:string" minOccurs="0"/>
+      <xs:element name="Last_Name" type="xs:string"/>
+    </xs:sequence>
+    <xs:attribute name="SSN" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:element name="Person_Phone_NO">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="SSN" type="xs:string"/>
+        <xs:element name="Phone_NO" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Customer">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="PersonType">
+          <xs:sequence>
+            <xs:element name="City" type="xs:string"/>
+            <xs:element name="Street_NO" type="xs:unsignedShort"/>
+            <xs:element name="Building_NO" type="xs:unsignedInt"/>
+            <xs:element name="District" type="xs:string"/>
+          </xs:sequence>
+          <xs:attribute name="C_SSN" type="xs:string"/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Supplier">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="PersonType">
+          <xs:sequence>
+            <xs:element name="Website" type="xs:string"/>
+          </xs:sequence>
+          <xs:attribute name="S_SSN" type="xs:string"/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:complexType name="EmployeeType">
+    <xs:complexContent>
+      <xs:extension base="PersonType">
+        <xs:sequence>
+          <xs:element name="Salary" type="xs:float"/>
+          <xs:element name="Role" type="RoleType"/>
+          <xs:element name="Center_ID" type="xs:unsignedInt"/>
+        </xs:sequence>
+        <xs:attribute name="E_SSN" type="xs:string"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:simpleType name="RoleType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Engineer"/>
+      <xs:enumeration value="Sales Man"/>
+      <xs:enumeration value="Janitor"/>
+      <xs:enumeration value="Cashier"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:element name="Sales_Man">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="EmployeeType">
+          <xs:sequence>
+            <xs:element name="Sales_Made" type="xs:unsignedInt"/>
+          </xs:sequence>
+          <xs:attribute name="SM_SSN" type="xs:string"/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Engineer">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="EmployeeType">
+          <xs:sequence>
+            <xs:element name="Specialization" type="xs:string"/>
+          </xs:sequence>
+          <xs:attribute name="E_SSN" type="xs:string"/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+
+
+</xs:schema>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="Service_Center">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Center_ID" type="xs:unsignedInt"/>
+        <xs:element name="NO_of_Employees" type="xs:unsignedInt"/>
+        <xs:element name="City" type="xs:string"/>
+        <xs:element name="Street_NO" type="xs:unsignedShort"/>
+        <xs:element name="Building_NO" type="xs:unsignedInt"/>
+        <xs:element name="District" type="xs:string"/>
+        <xs:element name="M_SSN" type="xs:string"/>
+      </xs:sequence>
+      <xs:attribute name="Center_ID" type="xs:unsignedInt"/>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>
