@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<mysqldump xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<database name="carservicecenter">
+    <table_structure name="car">
+		<field Field="Plate_NO" Type="varchar(10)" Null="NO" Key="PRI" Extra="" Comment="" />
+		<field Field="Model_Name" Type="varchar(10)" Null="NO" Key="MUL" Extra="" Comment="" />
+		<field Field="Model_Year" Type="year" Null="NO" Key="MUL" Extra="" Comment="" />
+		<field Field="SSN" Type="char(14)" Null="YES" Key="MUL" Extra="" Comment="" />
+		<key Table="car" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="Plate_NO" Collation="A" Cardinality="6" Null="" Index_type="BTREE" Comment="" Index_comment="" Visible="YES" />
+		<key Table="car" Non_unique="1" Key_name="Model_Name" Seq_in_index="1" Column_name="Model_Name" Collation="A" Cardinality="6" Null="" Index_type="BTREE" Comment="" Index_comment="" Visible="YES" />
+		<key Table="car" Non_unique="1" Key_name="Model_Year" Seq_in_index="1" Column_name="Model_Year" Collation="A" Cardinality="3" Null="" Index_type="BTREE" Comment="" Index_comment="" Visible="YES" />
+		<key Table="car" Non_unique="1" Key_name="SSN" Seq_in_index="1" Column_name="SSN" Collation="A" Cardinality="6" Null="YES" Index_type="BTREE" Comment="" Index_comment="" Visible="YES" />
+		<options Name="car" Engine="InnoDB" Version="10" Row_format="Dynamic" Rows="6" Avg_row_length="2730" Data_length="16384" Max_data_length="0" Index_length="49152" Data_free="0" Create_time="2023-05-04 17:38:53" Collation="utf8mb4_0900_ai_ci" Create_options="" Comment="" />
+    </table_structure>
+	<table_data name="car">
+        <row>
+            <field name="Plate_NO">CBV100</field>
+            <field name="Model_Name">Corolla</field>
+            <field name="Model_Year">2020</field>
+            <field name="SSN">97010701700418</field>
+        </row>
+        <row>
+            <field name="Plate_NO">HAD200</field>
+            <field name="Model_Name">Civic</field>
+            <field name="Model_Year">2021</field>
+            <field name="SSN">88061701300306</field>
+        </row>
+        <row>
+            <field name="Plate_NO">HFG300</field>
+            <field name="Model_Name">Accord</field>
+            <field name="Model_Year">2020</field>
+            <field name="SSN">91052101500785</field>
+        </row>
+        <row>
+            <field name="Plate_NO">NKI600</field>
+            <field name="Model_Name">Sentra</field>
+            <field name="Model_Year">2022</field>
+            <field name="SSN">78701252907252</field>
+        </row>
+        <row>
+            <field name="Plate_NO">NMB500</field>
+            <field name="Model_Name">Sunny</field>
+            <field name="Model_Year">2021</field>
+            <field name="SSN">28801032905237</field>
+        </row>
+        <row>
+            <field name="Plate_NO">TLO400</field>
+            <field name="Model_Name">Camry</field>
+            <field name="Model_Year">2022</field>
+            <field name="SSN">24703082706851</field>
+        </row>
+	</table_data>
+
+    <table_structure name="model">
+		<field Field="Model_Name" Type="varchar(10)" Null="NO" Key="PRI" Extra="" Comment="" />
+		<field Field="Model_Year" Type="year" Null="NO" Key="PRI" Extra="" Comment="" />
+		<field Field="Brand" Type="varchar(10)" Null="NO" Key="" Extra="" Comment="" />
+		<key Table="model" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="Model_Name" Collation="A" Cardinality="6" Null="" Index_type="BTREE" Comment="" Index_comment="" Visible="YES" />
+		<key Table="model" Non_unique="0" Key_name="PRIMARY" Seq_in_index="2" Column_name="Model_Year" Collation="A" Cardinality="6" Null="" Index_type="BTREE" Comment="" Index_comment="" Visible="YES" />
+		<key Table="model" Non_unique="1" Key_name="Model_Name" Seq_in_index="1" Column_name="Model_Name" Collation="A" Cardinality="6" Null="" Index_type="BTREE" Comment="" Index_comment="" Visible="YES" />
+		<key Table="model" Non_unique="1" Key_name="Model_Year" Seq_in_index="1" Column_name="Model_Year" Collation="A" Cardinality="3" Null="" Index_type="BTREE" Comment="" Index_comment="" Visible="YES" />
+		<options Name="model" Engine="InnoDB" Version="10" Row_format="Dynamic" Rows="6" Avg_row_length="2730" Data_length="16384" Max_data_length="0" Index_length="32768" Data_free="0" Create_time="2023-05-04 17:36:12" Collation="utf8mb4_0900_ai_ci" Create_options="" Comment="" />
+	</table_structure>
+	<table_data name="model">
+        <row>
+            <field name="Model_Name">Accord</field>
+            <field name="Model_Year">2020</field>
+            <field name="Brand">Honda</field>
+        </row>
+        <row>
+            <field name="Model_Name">Camry</field>
+            <field name="Model_Year">2022</field>
+            <field name="Brand">Toyota</field>
+        </row>
+        <row>
+            <field name="Model_Name">Civic</field>
+            <field name="Model_Year">2021</field>
+            <field name="Brand">Honda</field>
+        </row>
+        <row>
+            <field name="Model_Name">Corolla</field>
+            <field name="Model_Year">2020</field>
+            <field name="Brand">Toyota</field>
+        </row>
+        <row>
+            <field name="Model_Name">Sentra</field>
+            <field name="Model_Year">2022</field>
+            <field name="Brand">Nissan</field>
+        </row>
+        <row>
+            <field name="Model_Name">Sunny</field>
+            <field name="Model_Year">2021</field>
+            <field name="Brand">Nissan</field>
+        </row>
+	</table_data>
+</database>
+</mysqldump>

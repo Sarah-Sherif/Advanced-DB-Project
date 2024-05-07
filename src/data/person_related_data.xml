@@ -1,0 +1,514 @@
+<?xml version="1.0"?>
+<mysqldump xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<database name="carservicecenter">
+    <table_structure name="person">
+		<field Field="SSN" Type="char(14)" Null="NO" Key="PRI" Extra="" Comment="" />
+		<field Field="Birthdate" Type="date" Null="YES" Key="" Extra="" Comment="" />
+		<field Field="Email" Type="varchar(50)" Null="YES" Key="" Extra="" Comment="" />
+		<field Field="First_Name" Type="varchar(50)" Null="NO" Key="" Extra="" Comment="" />
+		<field Field="Middle_Name" Type="varchar(50)" Null="YES" Key="" Extra="" Comment="" />
+		<field Field="Last_Name" Type="varchar(50)" Null="NO" Key="" Extra="" Comment="" />
+		<key Table="person" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="SSN" Collation="A" Cardinality="20" Null="" Index_type="BTREE" Comment="" Index_comment="" Visible="YES" />
+		<options Name="person" Engine="InnoDB" Version="10" Row_format="Dynamic" Rows="20" Avg_row_length="819" Data_length="16384" Max_data_length="0" Index_length="0" Data_free="0" Create_time="2023-05-08 13:33:37" Collation="utf8mb4_0900_ai_ci" Create_options="" Comment="" />
+	</table_structure>
+	<table_data name="person">
+        <row>
+            <field name="SSN">12345678901234</field>
+            <field name="Birthdate">1980-05-12</field>
+            <field name="Email">ahmed123@gmail.com</field>
+            <field name="First_Name">Ahmed</field>
+            <field name="Middle_Name">Ali</field>
+            <field name="Last_Name">Khalil</field>
+        </row>
+        <row>
+            <field name="SSN">23456789012345</field>
+            <field name="Birthdate">1995-02-28</field>
+            <field name="Email">mohamed456@gmail.com</field>
+            <field name="First_Name">Mohamed</field>
+            <field name="Middle_Name" xsi:nil="true" />
+            <field name="Last_Name">Hassan</field>
+        </row>
+        <row>
+            <field name="SSN">24703082706851</field>
+            <field name="Birthdate">1997-08-27</field>
+            <field name="Email">nour.eldeen.mahmoud@gmail.com</field>
+            <field name="First_Name">Nour Eldeen</field>
+            <field name="Middle_Name" xsi:nil="true" />
+            <field name="Last_Name">Mahmoud</field>
+        </row>
+        <row>
+            <field name="SSN">28801032905237</field>
+            <field name="Birthdate">1994-03-29</field>
+            <field name="Email">marwa.abdullah@gmail.com</field>
+            <field name="First_Name">Marwa</field>
+            <field name="Middle_Name">Mohamed</field>
+            <field name="Last_Name">Abdullah</field>
+        </row>
+        <row>
+            <field name="SSN">29304152804122</field>
+            <field name="Birthdate">1992-06-15</field>
+            <field name="Email">ahmed.mohamed@gmail.com</field>
+            <field name="First_Name">Ahmed</field>
+            <field name="Middle_Name">Ali</field>
+            <field name="Last_Name">Mohamed</field>
+        </row>
+        <row>
+            <field name="SSN">70101432805243</field>
+            <field name="Birthdate">1985-02-25</field>
+            <field name="Email">fatma.hassan@gmail.com</field>
+            <field name="First_Name">Fatma</field>
+            <field name="Middle_Name">Mahmoud</field>
+            <field name="Last_Name">Hassan</field>
+        </row>
+        <row>
+            <field name="SSN">78701252907252</field>
+            <field name="Birthdate">1989-12-05</field>
+            <field name="Email">youssef.samir@gmail.com</field>
+            <field name="First_Name">Youssef</field>
+            <field name="Middle_Name">Samir</field>
+            <field name="Last_Name">Mohamed</field>
+        </row>
+        <row>
+            <field name="SSN">88061701300306</field>
+            <field name="Birthdate">1988-06-17</field>
+            <field name="Email">mona.hamdy@gmail.com</field>
+            <field name="First_Name">Mona</field>
+            <field name="Middle_Name">Hamdy</field>
+            <field name="Last_Name">Ali</field>
+        </row>
+        <row>
+            <field name="SSN">88112501100176</field>
+            <field name="Birthdate">1988-11-25</field>
+            <field name="Email">nour.eldeen.mostafa@gmail.com</field>
+            <field name="First_Name">Nour Eldeen</field>
+            <field name="Middle_Name">Mostafa</field>
+            <field name="Last_Name">Abdallah</field>
+        </row>
+        <row>
+            <field name="SSN">90052301300185</field>
+            <field name="Birthdate">1990-05-23</field>
+            <field name="Email">reem.ahmed@gmail.com</field>
+            <field name="First_Name">Reem</field>
+            <field name="Middle_Name">Ahmed</field>
+            <field name="Last_Name">Hassan</field>
+        </row>
+        <row>
+            <field name="SSN">91020901100485</field>
+            <field name="Birthdate">1991-02-09</field>
+            <field name="Email">mohamed.karim@gmail.com</field>
+            <field name="First_Name">Mohamed</field>
+            <field name="Middle_Name">Karim</field>
+            <field name="Last_Name">Said</field>
+        </row>
+        <row>
+            <field name="SSN">91052101500785</field>
+            <field name="Birthdate">1991-05-21</field>
+            <field name="Email">nour.salah@gmail.com</field>
+            <field name="First_Name">Nour</field>
+            <field name="Middle_Name">Salah</field>
+            <field name="Last_Name">Hassan</field>
+        </row>
+        <row>
+            <field name="SSN">91052603700351</field>
+            <field name="Birthdate">1991-05-26</field>
+            <field name="Email">fatmahassan@gmail.com</field>
+            <field name="First_Name">Fatma</field>
+            <field name="Middle_Name">Hassan</field>
+            <field name="Last_Name">Saleh</field>
+        </row>
+        <row>
+            <field name="SSN">93071701200417</field>
+            <field name="Birthdate">1993-07-17</field>
+            <field name="Email">yasmine.ahmed@gmail.com</field>
+            <field name="First_Name">Yasmine</field>
+            <field name="Middle_Name">Ahmed</field>
+            <field name="Last_Name">Khalil</field>
+        </row>
+        <row>
+            <field name="SSN">94060901200185</field>
+            <field name="Birthdate">1994-06-09</field>
+            <field name="Email">mohamed.mohsen@gmail.com</field>
+            <field name="First_Name">Mohamed</field>
+            <field name="Middle_Name">Mohsen</field>
+            <field name="Last_Name">Gaber</field>
+        </row>
+        <row>
+            <field name="SSN">95022501200146</field>
+            <field name="Birthdate">1995-02-25</field>
+            <field name="Email">kareem.ahmed@gmail.com</field>
+            <field name="First_Name">Kareem</field>
+            <field name="Middle_Name">Ahmed</field>
+            <field name="Last_Name">Hassan</field>
+        </row>
+        <row>
+            <field name="SSN">96012101300120</field>
+            <field name="Birthdate">1996-01-21</field>
+            <field name="Email">ahmed.mohamed@gmail.com</field>
+            <field name="First_Name">Ahmed</field>
+            <field name="Middle_Name">Mohamed</field>
+            <field name="Last_Name">Ali</field>
+        </row>
+        <row>
+            <field name="SSN">96102103500871</field>
+            <field name="Birthdate">1996-10-21</field>
+            <field name="Email">ahmedmohamed@gmail.com</field>
+            <field name="First_Name">Mostafa</field>
+            <field name="Middle_Name">Mohamed</field>
+            <field name="Last_Name">Ali</field>
+        </row>
+        <row>
+            <field name="SSN">97010701700418</field>
+            <field name="Birthdate">1997-01-07</field>
+            <field name="Email">ahmed.farouk@gmail.com</field>
+            <field name="First_Name">Ahmed</field>
+            <field name="Middle_Name">Farouk</field>
+            <field name="Last_Name">Saeed</field>
+        </row>
+        <row>
+            <field name="SSN">98031201500319</field>
+            <field name="Birthdate">1998-03-12</field>
+            <field name="Email">nada.mahmoud@gmail.com</field>
+            <field name="First_Name">Nada</field>
+            <field name="Middle_Name">Mahmoud</field>
+            <field name="Last_Name">Mahmoud</field>
+        </row>
+	</table_data>
+	<table_structure name="person_phone_no">
+		<field Field="SSN" Type="char(14)" Null="NO" Key="PRI" Extra="" Comment="" />
+		<field Field="Phone_NO" Type="char(11)" Null="NO" Key="PRI" Extra="" Comment="" />
+		<key Table="person_phone_no" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="SSN" Collation="A" Cardinality="19" Null="" Index_type="BTREE" Comment="" Index_comment="" Visible="YES" />
+		<key Table="person_phone_no" Non_unique="0" Key_name="PRIMARY" Seq_in_index="2" Column_name="Phone_NO" Collation="A" Cardinality="20" Null="" Index_type="BTREE" Comment="" Index_comment="" Visible="YES" />
+		<options Name="person_phone_no" Engine="InnoDB" Version="10" Row_format="Dynamic" Rows="20" Avg_row_length="819" Data_length="16384" Max_data_length="0" Index_length="0" Data_free="0" Create_time="2023-05-04 16:11:17" Collation="utf8mb4_0900_ai_ci" Create_options="" Comment="" />
+	</table_structure>
+	<table_data name="person_phone_no">
+        <row>
+            <field name="SSN">12345678901234</field>
+            <field name="Phone_NO">01234567890</field>
+        </row>
+        <row>
+            <field name="SSN">23456789012345</field>
+            <field name="Phone_NO">01123456789</field>
+        </row>
+        <row>
+            <field name="SSN">24703082706851</field>
+            <field name="Phone_NO">01062980431</field>
+        </row>
+        <row>
+            <field name="SSN">28801032905237</field>
+            <field name="Phone_NO">01135716849</field>
+        </row>
+        <row>
+            <field name="SSN">29304152804122</field>
+            <field name="Phone_NO">01028571935</field>
+        </row>
+        <row>
+            <field name="SSN">29304152804122</field>
+            <field name="Phone_NO">01234567895</field>
+        </row>
+        <row>
+            <field name="SSN">70101432805243</field>
+            <field name="Phone_NO">01190736521</field>
+        </row>
+        <row>
+            <field name="SSN">78701252907252</field>
+            <field name="Phone_NO">01268357469</field>
+        </row>
+        <row>
+            <field name="SSN">88061701300306</field>
+            <field name="Phone_NO">01123456789</field>
+        </row>
+        <row>
+            <field name="SSN">88112501100176</field>
+            <field name="Phone_NO">01234567893</field>
+        </row>
+        <row>
+            <field name="SSN">90052301300185</field>
+            <field name="Phone_NO">01234567896</field>
+        </row>
+        <row>
+            <field name="SSN">91020901100485</field>
+            <field name="Phone_NO">01234567892</field>
+        </row>
+        <row>
+            <field name="SSN">91052101500785</field>
+            <field name="Phone_NO">01234567890</field>
+        </row>
+        <row>
+            <field name="SSN">91052603700351</field>
+            <field name="Phone_NO">01233445566</field>
+        </row>
+        <row>
+            <field name="SSN">93071701200417</field>
+            <field name="Phone_NO">01234567891</field>
+        </row>
+        <row>
+            <field name="SSN">94060901200185</field>
+            <field name="Phone_NO">01234567897</field>
+        </row>
+        <row>
+            <field name="SSN">96012101300120</field>
+            <field name="Phone_NO">01234567890</field>
+        </row>
+        <row>
+            <field name="SSN">96102103500871</field>
+            <field name="Phone_NO">01099887766</field>
+        </row>
+        <row>
+            <field name="SSN">97010701700418</field>
+            <field name="Phone_NO">01012345678</field>
+        </row>
+        <row>
+            <field name="SSN">98031201500319</field>
+            <field name="Phone_NO">01234567894</field>
+        </row>
+	</table_data>
+
+    <table_structure name="sales_man">
+		<field Field="SM_SSN" Type="char(14)" Null="NO" Key="PRI" Extra="" Comment="" />
+		<field Field="Sales_Made" Type="int unsigned" Null="YES" Key="" Extra="" Comment="" />
+		<key Table="sales_man" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="SM_SSN" Collation="A" Cardinality="4" Null="" Index_type="BTREE" Comment="" Index_comment="" Visible="YES" />
+		<options Name="sales_man" Engine="InnoDB" Version="10" Row_format="Dynamic" Rows="4" Avg_row_length="4096" Data_length="16384" Max_data_length="0" Index_length="0" Data_free="0" Create_time="2023-05-08 15:02:19" Collation="utf8mb4_0900_ai_ci" Create_options="" Comment="" />
+	</table_structure>
+	<table_data name="sales_man">
+        <row>
+            <field name="SM_SSN">88112501100176</field>
+            <field name="Sales_Made">200</field>
+        </row>
+        <row>
+            <field name="SM_SSN">93071701200417</field>
+            <field name="Sales_Made">100</field>
+        </row>
+        <row>
+            <field name="SM_SSN">94060901200185</field>
+            <field name="Sales_Made">150</field>
+        </row>
+        <row>
+            <field name="SM_SSN">95022501200146</field>
+            <field name="Sales_Made">75</field>
+        </row>
+	</table_data>
+
+    <table_structure name="supplier">
+		<field Field="S_SSN" Type="char(14)" Null="NO" Key="PRI" Extra="" Comment="" />
+		<field Field="Website" Type="varchar(255)" Null="YES" Key="" Extra="" Comment="" />
+		<key Table="supplier" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="S_SSN" Collation="A" Cardinality="4" Null="" Index_type="BTREE" Comment="" Index_comment="" Visible="YES" />
+		<options Name="supplier" Engine="InnoDB" Version="10" Row_format="Dynamic" Rows="4" Avg_row_length="4096" Data_length="16384" Max_data_length="0" Index_length="0" Data_free="0" Create_time="2023-05-07 17:45:04" Collation="utf8mb4_0900_ai_ci" Create_options="" Comment="" />
+	</table_structure>
+	<table_data name="supplier">
+        <row>
+            <field name="S_SSN">29304152804122</field>
+            <field name="Website">https://www.servemycar.com</field>
+        </row>
+        <row>
+            <field name="S_SSN">70101432805243</field>
+            <field name="Website">https://egyptiancarservice.com</field>
+        </row>
+        <row>
+            <field name="S_SSN">91052603700351</field>
+            <field name="Website">https://www.egyptiancarparts.com</field>
+        </row>
+        <row>
+            <field name="S_SSN">96102103500871</field>
+            <field name="Website">https://www.egyptianautoparts.com</field>
+        </row>
+	</table_data>
+
+    <table_structure name="customer">
+		<field Field="C_SSN" Type="char(14)" Null="NO" Key="PRI" Extra="" Comment="" />
+		<field Field="City" Type="varchar(20)" Null="NO" Key="" Extra="" Comment="" />
+		<field Field="Street_NO" Type="smallint unsigned" Null="NO" Key="" Extra="" Comment="" />
+		<field Field="Building_NO" Type="int unsigned" Null="NO" Key="" Extra="" Comment="" />
+		<field Field="District" Type="varchar(20)" Null="NO" Key="" Extra="" Comment="" />
+		<key Table="customer" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="C_SSN" Collation="A" Cardinality="6" Null="" Index_type="BTREE" Comment="" Index_comment="" Visible="YES" />
+		<options Name="customer" Engine="InnoDB" Version="10" Row_format="Dynamic" Rows="6" Avg_row_length="2730" Data_length="16384" Max_data_length="0" Index_length="0" Data_free="0" Create_time="2023-05-08 15:29:34" Collation="utf8mb4_0900_ai_ci" Create_options="" Comment="" />
+	</table_structure>
+	<table_data name="customer">
+        <row>
+            <field name="C_SSN">24703082706851</field>
+            <field name="City">Giza</field>
+            <field name="Street_NO">15</field>
+            <field name="Building_NO">45</field>
+            <field name="District">El Mohandessin</field>
+        </row>
+        <row>
+            <field name="C_SSN">28801032905237</field>
+            <field name="City">Alexandria</field>
+            <field name="Street_NO">10</field>
+            <field name="Building_NO">23</field>
+            <field name="District">Sidi Gaber</field>
+        </row>
+        <row>
+            <field name="C_SSN">78701252907252</field>
+            <field name="City">Cairo</field>
+            <field name="Street_NO">5</field>
+            <field name="Building_NO">12</field>
+            <field name="District">Nasr City</field>
+        </row>
+        <row>
+            <field name="C_SSN">88061701300306</field>
+            <field name="City">Alexandria</field>
+            <field name="Street_NO">16</field>
+            <field name="Building_NO">8</field>
+            <field name="District">Gleem</field>
+        </row>
+        <row>
+            <field name="C_SSN">91052101500785</field>
+            <field name="City">Giza</field>
+            <field name="Street_NO">7</field>
+            <field name="Building_NO">12</field>
+            <field name="District">Mohandeseen</field>
+        </row>
+        <row>
+            <field name="C_SSN">97010701700418</field>
+            <field name="City">Cairo</field>
+            <field name="Street_NO">23</field>
+            <field name="Building_NO">5</field>
+            <field name="District">Maadi</field>
+        </row>
+	</table_data>
+	<table_structure name="customer_details">
+		<field Field="SSN" Type="char(14)" Null="NO" Key="" Extra="" Comment="" />
+		<field Field="First_Name" Type="varchar(50)" Null="NO" Key="" Extra="" Comment="" />
+		<field Field="Middle_Name" Type="varchar(50)" Null="YES" Key="" Extra="" Comment="" />
+		<field Field="Last_Name" Type="varchar(50)" Null="NO" Key="" Extra="" Comment="" />
+		<field Field="City" Type="varchar(20)" Null="NO" Key="" Extra="" Comment="" />
+		<field Field="Street_NO" Type="smallint unsigned" Null="NO" Key="" Extra="" Comment="" />
+		<field Field="Building_NO" Type="int unsigned" Null="NO" Key="" Extra="" Comment="" />
+		<field Field="District" Type="varchar(20)" Null="NO" Key="" Extra="" Comment="" />
+		<options Name="customer_details" Create_time="2023-05-12 12:49:44" Comment="VIEW" />
+	</table_structure>
+	<table_structure name="employee">
+		<field Field="E_SSN" Type="char(14)" Null="NO" Key="PRI" Extra="" Comment="" />
+		<field Field="Salary" Type="float unsigned" Null="NO" Key="" Extra="" Comment="" />
+		<field Field="Center_ID" Type="int unsigned" Null="NO" Key="MUL" Extra="" Comment="" />
+		<field Field="Role" Type="enum('Engineer','Sales Man')" Null="NO" Key="" Extra="" Comment="" />
+		<key Table="employee" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="E_SSN" Collation="A" Cardinality="8" Null="" Index_type="BTREE" Comment="" Index_comment="" Visible="YES" />
+		<key Table="employee" Non_unique="1" Key_name="Center_ID" Seq_in_index="1" Column_name="Center_ID" Collation="A" Cardinality="2" Null="" Index_type="BTREE" Comment="" Index_comment="" Visible="YES" />
+		<options Name="employee" Engine="InnoDB" Version="10" Row_format="Dynamic" Rows="8" Avg_row_length="2048" Data_length="16384" Max_data_length="0" Index_length="16384" Data_free="0" Create_time="2023-05-08 16:29:35" Collation="utf8mb4_0900_ai_ci" Create_options="" Comment="" />
+	</table_structure>
+	<table_data name="employee">
+        <row>
+            <field name="E_SSN">88112501100176</field>
+            <field name="Salary">20000</field>
+            <field name="Center_ID">1</field>
+            <field name="Role">Sales Man</field>
+        </row>
+        <row>
+            <field name="E_SSN">90052301300185</field>
+            <field name="Salary">14000</field>
+            <field name="Center_ID">1</field>
+            <field name="Role">Engineer</field>
+        </row>
+        <row>
+            <field name="E_SSN">91020901100485</field>
+            <field name="Salary">13200</field>
+            <field name="Center_ID">2</field>
+            <field name="Role">Engineer</field>
+        </row>
+        <row>
+            <field name="E_SSN">93071701200417</field>
+            <field name="Salary">17955</field>
+            <field name="Center_ID">2</field>
+            <field name="Role">Sales Man</field>
+        </row>
+        <row>
+            <field name="E_SSN">94060901200185</field>
+            <field name="Salary">16957.5</field>
+            <field name="Center_ID">2</field>
+            <field name="Role">Sales Man</field>
+        </row>
+        <row>
+            <field name="E_SSN">95022501200146</field>
+            <field name="Salary">9927.5</field>
+            <field name="Center_ID">2</field>
+            <field name="Role">Sales Man</field>
+        </row>
+        <row>
+            <field name="E_SSN">96012101300120</field>
+            <field name="Salary">15000</field>
+            <field name="Center_ID">1</field>
+            <field name="Role">Engineer</field>
+        </row>
+        <row>
+            <field name="E_SSN">98031201500319</field>
+            <field name="Salary">9900</field>
+            <field name="Center_ID">2</field>
+            <field name="Role">Engineer</field>
+        </row>
+	</table_data>
+	<triggers name="employee">
+		<trigger Trigger="increment_employee" sql_mode="ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION" character_set_client="utf8mb4" collation_connection="utf8mb4_0900_ai_ci" Database_Collation="utf8mb4_0900_ai_ci" Created="2023-05-08 20:23:32.41">
+<![CDATA[
+CREATE DEFINER=`root`@`localhost` TRIGGER `increment_employee` AFTER INSERT ON `employee` FOR EACH ROW BEGIN
+	UPDATE `Service_Center`
+	SET `NO_of_Employees` = `NO_of_Employees` + 1
+	WHERE `Service_center`.`Center_ID` = NEW.`Center_ID`;
+END
+]]>
+		</trigger>
+		<trigger Trigger="update_employee_change_center" sql_mode="ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION" character_set_client="utf8mb4" collation_connection="utf8mb4_0900_ai_ci" Database_Collation="utf8mb4_0900_ai_ci" Created="2023-05-08 20:23:32.46">
+<![CDATA[
+CREATE DEFINER=`root`@`localhost` TRIGGER `update_employee_change_center` AFTER UPDATE ON `employee` FOR EACH ROW BEGIN
+	IF OLD.`Center_ID` <> NEW.`Center_ID` THEN
+		UPDATE `service_center`
+	    SET `NO_of_Employees` = `NO_of_Employees` - 1
+		WHERE `service_center`.`Center_ID` = OLD.`Center_ID`;
+		
+		UPDATE `service_center`
+	    SET `NO_of_Employees` = `NO_of_Employees` + 1
+		WHERE `service_center`.`Center_ID` = NEW.`Center_ID`;
+	END IF;
+    IF (SELECT `NO_of_Employees`
+		FROM `service_center`
+        WHERE `Service_Center`.`Center_ID` = OLD.`Center_ID`) = 0
+	THEN
+		DELETE FROM `service_center` 
+        WHERE `Service_Center`.`Center_ID` = OLD.`Center_ID`;
+	END IF;
+    
+END
+]]>
+		</trigger>
+		<trigger Trigger="decrement_employee" sql_mode="ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION" character_set_client="utf8mb4" collation_connection="utf8mb4_0900_ai_ci" Database_Collation="utf8mb4_0900_ai_ci" Created="2023-05-08 20:23:32.48">
+<![CDATA[
+CREATE DEFINER=`root`@`localhost` TRIGGER `decrement_employee` AFTER DELETE ON `employee` FOR EACH ROW BEGIN
+    IF (SELECT `NO_of_Employees`
+		FROM `service_center`
+        WHERE `Service_Center`.`Center_ID` = OLD.`Center_ID`) = 1
+	THEN
+		DELETE FROM `Service_Center` 
+        WHERE `Service_Center`.`Center_ID` = OLD.`Center_ID`;
+	END IF;
+END
+]]>
+		</trigger>
+	</triggers>
+	
+	<table_structure name="engineer">
+		<field Field="E_SSN" Type="char(14)" Null="NO" Key="PRI" Extra="" Comment="" />
+		<field Field="Specialization" Type="varchar(50)" Null="YES" Key="" Extra="" Comment="" />
+		<key Table="engineer" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="E_SSN" Collation="A" Cardinality="4" Null="" Index_type="BTREE" Comment="" Index_comment="" Visible="YES" />
+		<options Name="engineer" Engine="InnoDB" Version="10" Row_format="Dynamic" Rows="4" Avg_row_length="4096" Data_length="16384" Max_data_length="0" Index_length="0" Data_free="0" Create_time="2023-05-08 15:05:09" Collation="utf8mb4_0900_ai_ci" Create_options="" Comment="" />
+	</table_structure>
+	<table_data name="engineer">
+        <row>
+            <field name="E_SSN">90052301300185</field>
+            <field name="Specialization">Software</field>
+        </row>
+        <row>
+            <field name="E_SSN">91020901100485</field>
+            <field name="Specialization">Civil</field>
+        </row>
+        <row>
+            <field name="E_SSN">96012101300120</field>
+            <field name="Specialization">Mechanical</field>
+        </row>
+        <row>
+            <field name="E_SSN">98031201500319</field>
+            <field name="Specialization">Electrical</field>
+        </row>
+	</table_data>
+
+
+</database>
+</mysqldump>

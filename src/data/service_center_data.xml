@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<mysqldump xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<database name="carservicecenter">
+
+    <table_structure name="service_center">
+		<field Field="Center_ID" Type="int unsigned" Null="NO" Key="PRI" Extra="auto_increment" Comment="" />
+		<field Field="NO_of_Employees" Type="int unsigned" Null="YES" Key="" Default="0" Extra="" Comment="" />
+		<field Field="City" Type="varchar(20)" Null="NO" Key="" Extra="" Comment="" />
+		<field Field="Street_NO" Type="smallint unsigned" Null="NO" Key="" Extra="" Comment="" />
+		<field Field="Building_NO" Type="int unsigned" Null="NO" Key="" Extra="" Comment="" />
+		<field Field="District" Type="varchar(20)" Null="NO" Key="" Extra="" Comment="" />
+		<field Field="M_SSN" Type="char(14)" Null="NO" Key="MUL" Extra="" Comment="" />
+		<key Table="service_center" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="Center_ID" Collation="A" Cardinality="2" Null="" Index_type="BTREE" Comment="" Index_comment="" Visible="YES" />
+		<key Table="service_center" Non_unique="1" Key_name="M_SSN" Seq_in_index="1" Column_name="M_SSN" Collation="A" Cardinality="2" Null="" Index_type="BTREE" Comment="" Index_comment="" Visible="YES" />
+		<options Name="service_center" Engine="InnoDB" Version="10" Row_format="Dynamic" Rows="2" Avg_row_length="8192" Data_length="16384" Max_data_length="0" Index_length="16384" Data_free="0" Auto_increment="3" Create_time="2023-05-08 17:53:38" Collation="utf8mb4_0900_ai_ci" Create_options="" Comment="" />
+	</table_structure>
+	<table_data name="service_center">
+        <row>
+            <field name="Center_ID">1</field>
+            <field name="NO_of_Employees">3</field>
+            <field name="City">Cairo</field>
+            <field name="Street_NO">10</field>
+            <field name="Building_NO">25</field>
+            <field name="District">Giza</field>
+            <field name="M_SSN">12345678901234</field>
+        </row>
+        <row>
+            <field name="Center_ID">2</field>
+            <field name="NO_of_Employees">5</field>
+            <field name="City">Alexandria</field>
+            <field name="Street_NO">5</field>
+            <field name="Building_NO">12</field>
+            <field name="District">Raml Station</field>
+            <field name="M_SSN">23456789012345</field>
+        </row>
+	</table_data>
+	<table_structure name="service_center_summary">
+		<field Field="Center_ID" Type="int unsigned" Null="NO" Key="" Default="0" Extra="" Comment="" />
+		<field Field="No_of_Employees" Type="bigint" Null="NO" Key="" Default="0" Extra="" Comment="" />
+		<field Field="Avg_Salary" Type="double" Null="YES" Key="" Extra="" Comment="" />
+		<field Field="Total_Salary" Type="double" Null="YES" Key="" Extra="" Comment="" />
+		<options Name="service_center_summary" Create_time="2023-05-12 13:24:21" Comment="VIEW" />
+	</table_structure>
+
+</database>
+</mysqldump>

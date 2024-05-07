@@ -1,0 +1,210 @@
+<?xml version="1.0"?>
+<mysqldump xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<database name="carservicecenter">
+    <table_structure name="battery">
+		<field Field="Model" Type="varchar(50)" Null="NO" Key="PRI" Extra="" Comment="" />
+		<field Field="Expiry_Date" Type="date" Null="NO" Key="" Extra="" Comment="" />
+		<key Table="battery" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="Model" Collation="A" Cardinality="3" Null="" Index_type="BTREE" Comment="" Index_comment="" Visible="YES" />
+		<options Name="battery" Engine="InnoDB" Version="10" Row_format="Dynamic" Rows="3" Avg_row_length="5461" Data_length="16384" Max_data_length="0" Index_length="0" Data_free="0" Create_time="2023-05-04 16:46:36" Collation="utf8mb4_0900_ai_ci" Create_options="" Comment="" />
+	</table_structure>
+	<table_data name="battery">
+        <row>
+            <field name="Model">B012</field>
+            <field name="Expiry_Date">2024-06-30</field>
+        </row>
+        <row>
+            <field name="Model">B345</field>
+            <field name="Expiry_Date">2023-12-31</field>
+        </row>
+        <row>
+            <field name="Model">B678</field>
+            <field name="Expiry_Date">2025-03-31</field>
+        </row>
+	</table_data>
+	<table_structure name="body">
+		<field Field="Model" Type="varchar(50)" Null="NO" Key="PRI" Extra="" Comment="" />
+		<field Field="Chassis_Type" Type="enum('Sedan','Hatchback','SUV','Coupe','Van','Truck','Convertible')" Null="YES" Key="" Extra="" Comment="" />
+		<key Table="body" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="Model" Collation="A" Cardinality="3" Null="" Index_type="BTREE" Comment="" Index_comment="" Visible="YES" />
+		<options Name="body" Engine="InnoDB" Version="10" Row_format="Dynamic" Rows="3" Avg_row_length="5461" Data_length="16384" Max_data_length="0" Index_length="0" Data_free="0" Create_time="2023-05-08 16:10:46" Collation="utf8mb4_0900_ai_ci" Create_options="" Comment="" />
+	</table_structure>
+	<table_data name="body">
+        <row>
+            <field name="Model">A123</field>
+            <field name="Chassis_Type">Sedan</field>
+        </row>
+        <row>
+            <field name="Model">A456</field>
+            <field name="Chassis_Type">SUV</field>
+        </row>
+        <row>
+            <field name="Model">A789</field>
+            <field name="Chassis_Type">Hatchback</field>
+        </row>
+	</table_data>
+
+    <table_structure name="component">
+		<field Field="Model" Type="varchar(50)" Null="NO" Key="PRI" Extra="" Comment="" />
+		<field Field="Price" Type="float unsigned" Null="NO" Key="" Extra="" Comment="" />
+		<key Table="component" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="Model" Collation="A" Cardinality="12" Null="" Index_type="BTREE" Comment="" Index_comment="" Visible="YES" />
+		<options Name="component" Engine="InnoDB" Version="10" Row_format="Dynamic" Rows="12" Avg_row_length="1365" Data_length="16384" Max_data_length="0" Index_length="0" Data_free="0" Create_time="2023-05-04 16:45:55" Collation="utf8mb4_0900_ai_ci" Create_options="" Comment="" />
+	</table_structure>
+	<table_data name="component">
+        <row>
+            <field name="Model">A123</field>
+            <field name="Price">5000</field>
+        </row>
+        <row>
+            <field name="Model">A456</field>
+            <field name="Price">10000</field>
+        </row>
+        <row>
+            <field name="Model">A789</field>
+            <field name="Price">8000</field>
+        </row>
+        <row>
+            <field name="Model">B012</field>
+            <field name="Price">12000</field>
+        </row>
+        <row>
+            <field name="Model">B345</field>
+            <field name="Price">15000</field>
+        </row>
+        <row>
+            <field name="Model">B678</field>
+            <field name="Price">9000</field>
+        </row>
+        <row>
+            <field name="Model">C234</field>
+            <field name="Price">13000</field>
+        </row>
+        <row>
+            <field name="Model">C567</field>
+            <field name="Price">7000</field>
+        </row>
+        <row>
+            <field name="Model">C901</field>
+            <field name="Price">11000</field>
+        </row>
+        <row>
+            <field name="Model">D123</field>
+            <field name="Price">6000</field>
+        </row>
+        <row>
+            <field name="Model">D456</field>
+            <field name="Price">8500</field>
+        </row>
+        <row>
+            <field name="Model">D890</field>
+            <field name="Price">14000</field>
+        </row>
+	</table_data>
+
+    <table_structure name="engine">
+		<field Field="Model" Type="varchar(50)" Null="NO" Key="PRI" Extra="" Comment="" />
+		<field Field="Lubricant_Type" Type="varchar(14)" Null="NO" Key="" Extra="" Comment="" />
+		<field Field="Horse_Power" Type="smallint unsigned" Null="NO" Key="" Extra="" Comment="" />
+		<key Table="engine" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="Model" Collation="A" Cardinality="3" Null="" Index_type="BTREE" Comment="" Index_comment="" Visible="YES" />
+		<options Name="engine" Engine="InnoDB" Version="10" Row_format="Dynamic" Rows="3" Avg_row_length="5461" Data_length="16384" Max_data_length="0" Index_length="0" Data_free="0" Create_time="2023-05-04 16:46:46" Collation="utf8mb4_0900_ai_ci" Create_options="" Comment="" />
+	</table_structure>
+	<table_data name="engine">
+        <row>
+            <field name="Model">D123</field>
+            <field name="Lubricant_Type">Mineral</field>
+            <field name="Horse_Power">200</field>
+        </row>
+        <row>
+            <field name="Model">D456</field>
+            <field name="Lubricant_Type">Synthetic</field>
+            <field name="Horse_Power">250</field>
+        </row>
+        <row>
+            <field name="Model">D890</field>
+            <field name="Lubricant_Type">Synthetic</field>
+            <field name="Horse_Power">300</field>
+        </row>
+	</table_data>
+
+    <table_structure name="offers">
+		<field Field="Component_Model" Type="varchar(50)" Null="NO" Key="PRI" Extra="" Comment="" />
+		<field Field="S_SSN" Type="char(14)" Null="NO" Key="PRI" Extra="" Comment="" />
+		<key Table="offers" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="Component_Model" Collation="A" Cardinality="12" Null="" Index_type="BTREE" Comment="" Index_comment="" Visible="YES" />
+		<key Table="offers" Non_unique="0" Key_name="PRIMARY" Seq_in_index="2" Column_name="S_SSN" Collation="A" Cardinality="12" Null="" Index_type="BTREE" Comment="" Index_comment="" Visible="YES" />
+		<key Table="offers" Non_unique="1" Key_name="S_SSN" Seq_in_index="1" Column_name="S_SSN" Collation="A" Cardinality="4" Null="" Index_type="BTREE" Comment="" Index_comment="" Visible="YES" />
+		<options Name="offers" Engine="InnoDB" Version="10" Row_format="Dynamic" Rows="12" Avg_row_length="1365" Data_length="16384" Max_data_length="0" Index_length="16384" Data_free="0" Create_time="2023-05-04 16:46:06" Collation="utf8mb4_0900_ai_ci" Create_options="" Comment="" />
+	</table_structure>
+	<table_data name="offers">
+        <row>
+            <field name="Component_Model">B012</field>
+            <field name="S_SSN">29304152804122</field>
+        </row>
+        <row>
+            <field name="Component_Model">C234</field>
+            <field name="S_SSN">29304152804122</field>
+        </row>
+        <row>
+            <field name="Component_Model">D456</field>
+            <field name="S_SSN">29304152804122</field>
+        </row>
+        <row>
+            <field name="Component_Model">A123</field>
+            <field name="S_SSN">70101432805243</field>
+        </row>
+        <row>
+            <field name="Component_Model">B345</field>
+            <field name="S_SSN">70101432805243</field>
+        </row>
+        <row>
+            <field name="Component_Model">C567</field>
+            <field name="S_SSN">70101432805243</field>
+        </row>
+        <row>
+            <field name="Component_Model">A789</field>
+            <field name="S_SSN">91052603700351</field>
+        </row>
+        <row>
+            <field name="Component_Model">C901</field>
+            <field name="S_SSN">91052603700351</field>
+        </row>
+        <row>
+            <field name="Component_Model">D123</field>
+            <field name="S_SSN">91052603700351</field>
+        </row>
+        <row>
+            <field name="Component_Model">A456</field>
+            <field name="S_SSN">96102103500871</field>
+        </row>
+        <row>
+            <field name="Component_Model">B678</field>
+            <field name="S_SSN">96102103500871</field>
+        </row>
+        <row>
+            <field name="Component_Model">D890</field>
+            <field name="S_SSN">96102103500871</field>
+        </row>
+	</table_data>
+
+
+    <table_structure name="transmission">
+		<field Field="Model" Type="varchar(50)" Null="NO" Key="PRI" Extra="" Comment="" />
+		<field Field="Transmission_Type" Type="enum('Automatic','Manual')" Null="NO" Key="" Extra="" Comment="" />
+		<key Table="transmission" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="Model" Collation="A" Cardinality="3" Null="" Index_type="BTREE" Comment="" Index_comment="" Visible="YES" />
+		<options Name="transmission" Engine="InnoDB" Version="10" Row_format="Dynamic" Rows="3" Avg_row_length="5461" Data_length="16384" Max_data_length="0" Index_length="0" Data_free="0" Create_time="2023-05-04 16:46:36" Collation="utf8mb4_0900_ai_ci" Create_options="" Comment="" />
+	</table_structure>
+	<table_data name="transmission">
+        <row>
+            <field name="Model">C234</field>
+            <field name="Transmission_Type">Manual</field>
+        </row>
+        <row>
+            <field name="Model">C567</field>
+            <field name="Transmission_Type">Automatic</field>
+        </row>
+        <row>
+            <field name="Model">C901</field>
+            <field name="Transmission_Type">Automatic</field>
+        </row>
+	</table_data>
+
+
+</database>
+</mysqldump>

@@ -1,0 +1,134 @@
+<?xml version="1.0"?>
+<mysqldump xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<database name="carservicecenter">
+
+    <table_structure name="maintenance_task">
+		<field Field="Task_ID" Type="int unsigned" Null="NO" Key="PRI" Extra="auto_increment" Comment="" />
+		<field Field="Task_Date" Type="date" Null="NO" Key="" Extra="" Comment="" />
+		<field Field="Price" Type="float unsigned" Null="NO" Key="" Extra="" Comment="" />
+		<field Field="Center_ID" Type="int unsigned" Null="NO" Key="MUL" Extra="" Comment="" />
+		<field Field="Plate_NO" Type="varchar(10)" Null="NO" Key="MUL" Extra="" Comment="" />
+		<field Field="Order_ID" Type="int unsigned" Null="NO" Key="MUL" Extra="" Comment="" />
+		<field Field="Component_Model" Type="varchar(10)" Null="NO" Key="MUL" Extra="" Comment="" />
+		<key Table="maintenance_task" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="Task_ID" Collation="A" Cardinality="6" Null="" Index_type="BTREE" Comment="" Index_comment="" Visible="YES" />
+		<key Table="maintenance_task" Non_unique="1" Key_name="Center_ID" Seq_in_index="1" Column_name="Center_ID" Collation="A" Cardinality="2" Null="" Index_type="BTREE" Comment="" Index_comment="" Visible="YES" />
+		<key Table="maintenance_task" Non_unique="1" Key_name="Order_ID" Seq_in_index="1" Column_name="Order_ID" Collation="A" Cardinality="6" Null="" Index_type="BTREE" Comment="" Index_comment="" Visible="YES" />
+		<key Table="maintenance_task" Non_unique="1" Key_name="Component_Model" Seq_in_index="1" Column_name="Component_Model" Collation="A" Cardinality="6" Null="" Index_type="BTREE" Comment="" Index_comment="" Visible="YES" />
+		<key Table="maintenance_task" Non_unique="1" Key_name="Plate_NO" Seq_in_index="1" Column_name="Plate_NO" Collation="A" Cardinality="6" Null="" Index_type="BTREE" Comment="" Index_comment="" Visible="YES" />
+		<options Name="maintenance_task" Engine="InnoDB" Version="10" Row_format="Dynamic" Rows="6" Avg_row_length="2730" Data_length="16384" Max_data_length="0" Index_length="65536" Data_free="0" Auto_increment="7" Create_time="2023-05-08 17:52:43" Collation="utf8mb4_0900_ai_ci" Create_options="" Comment="" />
+	</table_structure>
+	<table_data name="maintenance_task">
+        <row>
+            <field name="Task_ID">1</field>
+            <field name="Task_Date">2023-05-01</field>
+            <field name="Price">8000</field>
+            <field name="Center_ID">1</field>
+            <field name="Plate_NO">CBV100</field>
+            <field name="Order_ID">1</field>
+            <field name="Component_Model">A123</field>
+        </row>
+        <row>
+            <field name="Task_ID">2</field>
+            <field name="Task_Date">2023-05-02</field>
+            <field name="Price">10000</field>
+            <field name="Center_ID">2</field>
+            <field name="Plate_NO">HAD200</field>
+            <field name="Order_ID">2</field>
+            <field name="Component_Model">B345</field>
+        </row>
+        <row>
+            <field name="Task_ID">3</field>
+            <field name="Task_Date">2023-05-03</field>
+            <field name="Price">9000</field>
+            <field name="Center_ID">1</field>
+            <field name="Plate_NO">HFG300</field>
+            <field name="Order_ID">3</field>
+            <field name="Component_Model">C567</field>
+        </row>
+        <row>
+            <field name="Task_ID">4</field>
+            <field name="Task_Date">2023-05-04</field>
+            <field name="Price">12000</field>
+            <field name="Center_ID">1</field>
+            <field name="Plate_NO">TLO400</field>
+            <field name="Order_ID">4</field>
+            <field name="Component_Model">D890</field>
+        </row>
+        <row>
+            <field name="Task_ID">5</field>
+            <field name="Task_Date">2023-05-05</field>
+            <field name="Price">15000</field>
+            <field name="Center_ID">2</field>
+            <field name="Plate_NO">NMB500</field>
+            <field name="Order_ID">5</field>
+            <field name="Component_Model">A456</field>
+        </row>
+        <row>
+            <field name="Task_ID">6</field>
+            <field name="Task_Date">2023-05-06</field>
+            <field name="Price">7000</field>
+            <field name="Center_ID">1</field>
+            <field name="Plate_NO">NKI600</field>
+            <field name="Order_ID">6</field>
+            <field name="Component_Model">B678</field>
+        </row>
+	</table_data>
+	<triggers name="maintenance_task">
+		<trigger Trigger="Repair_Order_Price" sql_mode="ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION" character_set_client="utf8mb4" collation_connection="utf8mb4_0900_ai_ci" Database_Collation="utf8mb4_0900_ai_ci" Created="2023-05-08 20:23:32.49">
+<![CDATA[
+CREATE DEFINER=`root`@`localhost` TRIGGER `Repair_Order_Price` AFTER INSERT ON `maintenance_task` FOR EACH ROW BEGIN
+	UPDATE `Order`
+    SET `Total_Cost` = NEW.`Price`
+    WHERE `Order`.`Order_ID` = NEW.`Order_ID`;
+END
+]]>
+		</trigger>
+		<trigger Trigger="Update_Repair_Order_Price" sql_mode="ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION" character_set_client="utf8mb4" collation_connection="utf8mb4_0900_ai_ci" Database_Collation="utf8mb4_0900_ai_ci" Created="2023-05-08 20:23:32.50">
+<![CDATA[
+CREATE DEFINER=`root`@`localhost` TRIGGER `Update_Repair_Order_Price` AFTER UPDATE ON `maintenance_task` FOR EACH ROW BEGIN
+	UPDATE `Order`
+	SET `Total_Cost` = NEW.`Price`
+	WHERE `Order`.`Order_ID` = NEW.`Order_ID`;
+END
+]]>
+		</trigger>
+	</triggers>
+
+    <table_structure name="performs">
+		<field Field="SSN" Type="char(14)" Null="NO" Key="PRI" Extra="" Comment="" />
+		<field Field="Task_ID" Type="int unsigned" Null="NO" Key="PRI" Extra="" Comment="" />
+		<key Table="performs" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="SSN" Collation="A" Cardinality="2" Null="" Index_type="BTREE" Comment="" Index_comment="" Visible="YES" />
+		<key Table="performs" Non_unique="0" Key_name="PRIMARY" Seq_in_index="2" Column_name="Task_ID" Collation="A" Cardinality="6" Null="" Index_type="BTREE" Comment="" Index_comment="" Visible="YES" />
+		<key Table="performs" Non_unique="1" Key_name="Task_ID" Seq_in_index="1" Column_name="Task_ID" Collation="A" Cardinality="6" Null="" Index_type="BTREE" Comment="" Index_comment="" Visible="YES" />
+		<options Name="performs" Engine="InnoDB" Version="10" Row_format="Dynamic" Rows="6" Avg_row_length="2730" Data_length="16384" Max_data_length="0" Index_length="16384" Data_free="0" Create_time="2023-05-04 16:55:51" Collation="utf8mb4_0900_ai_ci" Create_options="" Comment="" />
+	</table_structure>
+	<table_data name="performs">
+        <row>
+            <field name="SSN">96012101300120</field>
+            <field name="Task_ID">1</field>
+        </row>
+        <row>
+            <field name="SSN">98031201500319</field>
+            <field name="Task_ID">2</field>
+        </row>
+        <row>
+            <field name="SSN">96012101300120</field>
+            <field name="Task_ID">3</field>
+        </row>
+        <row>
+            <field name="SSN">98031201500319</field>
+            <field name="Task_ID">4</field>
+        </row>
+        <row>
+            <field name="SSN">96012101300120</field>
+            <field name="Task_ID">5</field>
+        </row>
+        <row>
+            <field name="SSN">98031201500319</field>
+            <field name="Task_ID">6</field>
+        </row>
+	</table_data>
+	
+
+</database>
+</mysqldump>

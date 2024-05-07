@@ -1,0 +1,361 @@
+<?xml version="1.0"?>
+<mysqldump xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<database name="carservicecenter">
+	<table_structure name="order">
+		<field Field="Order_ID" Type="int unsigned" Null="NO" Key="PRI" Extra="auto_increment" Comment="" />
+		<field Field="Status" Type="enum('Delivered','In Progress','Completed')" Null="YES" Key="" Default="In Progress" Extra="" Comment="" />
+		<field Field="Payment_Method" Type="enum('Cash','Credit')" Null="NO" Key="" Extra="" Comment="" />
+		<field Field="Date" Type="date" Null="NO" Key="" Extra="" Comment="" />
+		<field Field="Total_Cost" Type="float unsigned" Null="YES" Key="" Default="0" Extra="" Comment="" />
+		<key Table="order" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="Order_ID" Collation="A" Cardinality="19" Null="" Index_type="BTREE" Comment="" Index_comment="" Visible="YES" />
+		<options Name="order" Engine="InnoDB" Version="10" Row_format="Dynamic" Rows="19" Avg_row_length="862" Data_length="16384" Max_data_length="0" Index_length="0" Data_free="0" Auto_increment="21" Create_time="2023-05-08 17:53:10" Collation="utf8mb4_0900_ai_ci" Create_options="" Comment="" />
+	</table_structure>
+	<table_data name="order">
+        <row>
+            <field name="Order_ID">1</field>
+            <field name="Status">Delivered</field>
+            <field name="Payment_Method">Credit</field>
+            <field name="Date">2023-05-01</field>
+            <field name="Total_Cost">8000</field>
+        </row>
+        <row>
+            <field name="Order_ID">2</field>
+            <field name="Status">In Progress</field>
+            <field name="Payment_Method">Cash</field>
+            <field name="Date">2023-05-02</field>
+            <field name="Total_Cost">10000</field>
+        </row>
+        <row>
+            <field name="Order_ID">3</field>
+            <field name="Status">In Progress</field>
+            <field name="Payment_Method">Credit</field>
+            <field name="Date">2023-05-03</field>
+            <field name="Total_Cost">9000</field>
+        </row>
+        <row>
+            <field name="Order_ID">4</field>
+            <field name="Status">Completed</field>
+            <field name="Payment_Method">Cash</field>
+            <field name="Date">2023-05-04</field>
+            <field name="Total_Cost">12000</field>
+        </row>
+        <row>
+            <field name="Order_ID">5</field>
+            <field name="Status">Delivered</field>
+            <field name="Payment_Method">Credit</field>
+            <field name="Date">2023-05-05</field>
+            <field name="Total_Cost">15000</field>
+        </row>
+        <row>
+            <field name="Order_ID">6</field>
+            <field name="Status">In Progress</field>
+            <field name="Payment_Method">Cash</field>
+            <field name="Date">2023-05-06</field>
+            <field name="Total_Cost">7000</field>
+        </row>
+        <row>
+            <field name="Order_ID">7</field>
+            <field name="Status">In Progress</field>
+            <field name="Payment_Method">Cash</field>
+            <field name="Date">2023-05-08</field>
+            <field name="Total_Cost">10000</field>
+        </row>
+        <row>
+            <field name="Order_ID">8</field>
+            <field name="Status">In Progress</field>
+            <field name="Payment_Method">Credit</field>
+            <field name="Date">2023-05-08</field>
+            <field name="Total_Cost">10000</field>
+        </row>
+        <row>
+            <field name="Order_ID">9</field>
+            <field name="Status">Completed</field>
+            <field name="Payment_Method">Credit</field>
+            <field name="Date">2023-05-08</field>
+            <field name="Total_Cost">24000</field>
+        </row>
+        <row>
+            <field name="Order_ID">10</field>
+            <field name="Status">Delivered</field>
+            <field name="Payment_Method">Cash</field>
+            <field name="Date">2023-05-08</field>
+            <field name="Total_Cost">24000</field>
+        </row>
+        <row>
+            <field name="Order_ID">11</field>
+            <field name="Status">In Progress</field>
+            <field name="Payment_Method">Cash</field>
+            <field name="Date">2023-05-08</field>
+            <field name="Total_Cost">60000</field>
+        </row>
+        <row>
+            <field name="Order_ID">12</field>
+            <field name="Status">Delivered</field>
+            <field name="Payment_Method">Credit</field>
+            <field name="Date">2023-05-07</field>
+            <field name="Total_Cost">9000</field>
+        </row>
+        <row>
+            <field name="Order_ID">13</field>
+            <field name="Status">Completed</field>
+            <field name="Payment_Method">Cash</field>
+            <field name="Date">2023-05-06</field>
+            <field name="Total_Cost">22000</field>
+        </row>
+        <row>
+            <field name="Order_ID">14</field>
+            <field name="Status">In Progress</field>
+            <field name="Payment_Method">Credit</field>
+            <field name="Date">2023-05-05</field>
+            <field name="Total_Cost">26000</field>
+        </row>
+        <row>
+            <field name="Order_ID">15</field>
+            <field name="Status">In Progress</field>
+            <field name="Payment_Method">Cash</field>
+            <field name="Date">2023-05-04</field>
+            <field name="Total_Cost">7000</field>
+        </row>
+        <row>
+            <field name="Order_ID">16</field>
+            <field name="Status">Delivered</field>
+            <field name="Payment_Method">Credit</field>
+            <field name="Date">2023-05-03</field>
+            <field name="Total_Cost">42000</field>
+        </row>
+        <row>
+            <field name="Order_ID">17</field>
+            <field name="Status">Completed</field>
+            <field name="Payment_Method">Cash</field>
+            <field name="Date">2023-05-02</field>
+            <field name="Total_Cost">12000</field>
+        </row>
+        <row>
+            <field name="Order_ID">18</field>
+            <field name="Status">In Progress</field>
+            <field name="Payment_Method">Credit</field>
+            <field name="Date">2023-05-01</field>
+            <field name="Total_Cost">17000</field>
+        </row>
+	</table_data>
+
+    <table_structure name="purchase_order">
+		<field Field="Order_ID" Type="int unsigned" Null="NO" Key="PRI" Extra="" Comment="" />
+		<field Field="Delivery_Date" Type="date" Null="NO" Key="" Extra="" Comment="" />
+		<field Field="S_SSN" Type="char(14)" Null="NO" Key="MUL" Extra="" Comment="" />
+		<key Table="purchase_order" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="Order_ID" Collation="A" Cardinality="12" Null="" Index_type="BTREE" Comment="" Index_comment="" Visible="YES" />
+		<key Table="purchase_order" Non_unique="1" Key_name="S_SSN" Seq_in_index="1" Column_name="S_SSN" Collation="A" Cardinality="4" Null="" Index_type="BTREE" Comment="" Index_comment="" Visible="YES" />
+		<options Name="purchase_order" Engine="InnoDB" Version="10" Row_format="Dynamic" Rows="12" Avg_row_length="1365" Data_length="16384" Max_data_length="0" Index_length="16384" Data_free="0" Create_time="2023-05-08 15:32:03" Collation="utf8mb4_0900_ai_ci" Create_options="" Comment="" />
+	</table_structure>
+	<table_data name="purchase_order">
+        <row>
+            <field name="Order_ID">7</field>
+            <field name="Delivery_Date">2023-05-10</field>
+            <field name="S_SSN">70101432805243</field>
+        </row>
+        <row>
+            <field name="Order_ID">8</field>
+            <field name="Delivery_Date">2023-05-11</field>
+            <field name="S_SSN">96102103500871</field>
+        </row>
+        <row>
+            <field name="Order_ID">9</field>
+            <field name="Delivery_Date">2023-05-12</field>
+            <field name="S_SSN">91052603700351</field>
+        </row>
+        <row>
+            <field name="Order_ID">10</field>
+            <field name="Delivery_Date">2023-05-13</field>
+            <field name="S_SSN">29304152804122</field>
+        </row>
+        <row>
+            <field name="Order_ID">11</field>
+            <field name="Delivery_Date">2023-05-12</field>
+            <field name="S_SSN">70101432805243</field>
+        </row>
+        <row>
+            <field name="Order_ID">12</field>
+            <field name="Delivery_Date">2023-05-11</field>
+            <field name="S_SSN">96102103500871</field>
+        </row>
+        <row>
+            <field name="Order_ID">13</field>
+            <field name="Delivery_Date">2023-05-10</field>
+            <field name="S_SSN">91052603700351</field>
+        </row>
+        <row>
+            <field name="Order_ID">14</field>
+            <field name="Delivery_Date">2023-05-09</field>
+            <field name="S_SSN">29304152804122</field>
+        </row>
+        <row>
+            <field name="Order_ID">15</field>
+            <field name="Delivery_Date">2023-05-16</field>
+            <field name="S_SSN">70101432805243</field>
+        </row>
+        <row>
+            <field name="Order_ID">16</field>
+            <field name="Delivery_Date">2023-05-15</field>
+            <field name="S_SSN">96102103500871</field>
+        </row>
+        <row>
+            <field name="Order_ID">17</field>
+            <field name="Delivery_Date">2023-05-14</field>
+            <field name="S_SSN">91052603700351</field>
+        </row>
+        <row>
+            <field name="Order_ID">18</field>
+            <field name="Delivery_Date">2023-05-13</field>
+            <field name="S_SSN">29304152804122</field>
+        </row>
+	</table_data>
+	<table_structure name="repair_order">
+		<field Field="Order_ID" Type="int unsigned" Null="NO" Key="PRI" Extra="" Comment="" />
+		<field Field="C_SSN" Type="char(14)" Null="NO" Key="MUL" Extra="" Comment="" />
+		<field Field="City" Type="varchar(20)" Null="NO" Key="" Extra="" Comment="" />
+		<field Field="Street_NO" Type="smallint unsigned" Null="NO" Key="" Extra="" Comment="" />
+		<field Field="Building_NO" Type="int unsigned" Null="NO" Key="" Extra="" Comment="" />
+		<field Field="District" Type="varchar(20)" Null="NO" Key="" Extra="" Comment="" />
+		<key Table="repair_order" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="Order_ID" Collation="A" Cardinality="6" Null="" Index_type="BTREE" Comment="" Index_comment="" Visible="YES" />
+		<key Table="repair_order" Non_unique="1" Key_name="C_SSN" Seq_in_index="1" Column_name="C_SSN" Collation="A" Cardinality="6" Null="" Index_type="BTREE" Comment="" Index_comment="" Visible="YES" />
+		<options Name="repair_order" Engine="InnoDB" Version="10" Row_format="Dynamic" Rows="6" Avg_row_length="2730" Data_length="16384" Max_data_length="0" Index_length="16384" Data_free="0" Create_time="2023-05-08 15:31:55" Collation="utf8mb4_0900_ai_ci" Create_options="" Comment="" />
+	</table_structure>
+	<table_data name="repair_order">
+        <row>
+            <field name="Order_ID">1</field>
+            <field name="C_SSN">97010701700418</field>
+            <field name="City">Cairo</field>
+            <field name="Street_NO">23</field>
+            <field name="Building_NO">5</field>
+            <field name="District">Maadi</field>
+        </row>
+        <row>
+            <field name="Order_ID">2</field>
+            <field name="C_SSN">88061701300306</field>
+            <field name="City">Alexandria</field>
+            <field name="Street_NO">16</field>
+            <field name="Building_NO">8</field>
+            <field name="District">Gleem</field>
+        </row>
+        <row>
+            <field name="Order_ID">3</field>
+            <field name="C_SSN">91052101500785</field>
+            <field name="City">Giza</field>
+            <field name="Street_NO">7</field>
+            <field name="Building_NO">12</field>
+            <field name="District">Mohandeseen</field>
+        </row>
+        <row>
+            <field name="Order_ID">4</field>
+            <field name="C_SSN">24703082706851</field>
+            <field name="City">Giza</field>
+            <field name="Street_NO">15</field>
+            <field name="Building_NO">45</field>
+            <field name="District">El Mohandessin</field>
+        </row>
+        <row>
+            <field name="Order_ID">5</field>
+            <field name="C_SSN">28801032905237</field>
+            <field name="City">Alexandria</field>
+            <field name="Street_NO">10</field>
+            <field name="Building_NO">23</field>
+            <field name="District">Sidi Gaber</field>
+        </row>
+        <row>
+            <field name="Order_ID">6</field>
+            <field name="C_SSN">78701252907252</field>
+            <field name="City">Cairo</field>
+            <field name="Street_NO">5</field>
+            <field name="Building_NO">12</field>
+            <field name="District">Nasr City</field>
+        </row>
+	</table_data>
+
+    <table_structure name="consist_of">
+		<field Field="Order_ID" Type="int unsigned" Null="NO" Key="PRI" Extra="" Comment="" />
+		<field Field="Component_Model" Type="varchar(50)" Null="NO" Key="PRI" Extra="" Comment="" />
+		<field Field="Quantity" Type="smallint unsigned" Null="NO" Key="" Extra="" Comment="" />
+		<key Table="consist_of" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="Order_ID" Collation="A" Cardinality="12" Null="" Index_type="BTREE" Comment="" Index_comment="" Visible="YES" />
+		<key Table="consist_of" Non_unique="0" Key_name="PRIMARY" Seq_in_index="2" Column_name="Component_Model" Collation="A" Cardinality="12" Null="" Index_type="BTREE" Comment="" Index_comment="" Visible="YES" />
+		<key Table="consist_of" Non_unique="1" Key_name="Component_Model" Seq_in_index="1" Column_name="Component_Model" Collation="A" Cardinality="12" Null="" Index_type="BTREE" Comment="" Index_comment="" Visible="YES" />
+		<options Name="consist_of" Engine="InnoDB" Version="10" Row_format="Dynamic" Rows="12" Avg_row_length="1365" Data_length="16384" Max_data_length="0" Index_length="16384" Data_free="0" Create_time="2023-05-08 13:10:03" Collation="utf8mb4_0900_ai_ci" Create_options="" Comment="" />
+	</table_structure>
+	<table_data name="consist_of">
+        <row>
+            <field name="Order_ID">7</field>
+            <field name="Component_Model">A123</field>
+            <field name="Quantity">2</field>
+        </row>
+        <row>
+            <field name="Order_ID">8</field>
+            <field name="Component_Model">A456</field>
+            <field name="Quantity">1</field>
+        </row>
+        <row>
+            <field name="Order_ID">9</field>
+            <field name="Component_Model">A789</field>
+            <field name="Quantity">3</field>
+        </row>
+        <row>
+            <field name="Order_ID">10</field>
+            <field name="Component_Model">B012</field>
+            <field name="Quantity">2</field>
+        </row>
+        <row>
+            <field name="Order_ID">11</field>
+            <field name="Component_Model">B345</field>
+            <field name="Quantity">4</field>
+        </row>
+        <row>
+            <field name="Order_ID">12</field>
+            <field name="Component_Model">B678</field>
+            <field name="Quantity">1</field>
+        </row>
+        <row>
+            <field name="Order_ID">13</field>
+            <field name="Component_Model">C901</field>
+            <field name="Quantity">2</field>
+        </row>
+        <row>
+            <field name="Order_ID">14</field>
+            <field name="Component_Model">C234</field>
+            <field name="Quantity">2</field>
+        </row>
+        <row>
+            <field name="Order_ID">15</field>
+            <field name="Component_Model">C567</field>
+            <field name="Quantity">1</field>
+        </row>
+        <row>
+            <field name="Order_ID">16</field>
+            <field name="Component_Model">D890</field>
+            <field name="Quantity">3</field>
+        </row>
+        <row>
+            <field name="Order_ID">17</field>
+            <field name="Component_Model">D123</field>
+            <field name="Quantity">2</field>
+        </row>
+        <row>
+            <field name="Order_ID">18</field>
+            <field name="Component_Model">D456</field>
+            <field name="Quantity">2</field>
+        </row>
+	</table_data>
+	<triggers name="consist_of">
+		<trigger Trigger="Purchase_Order_Price" sql_mode="ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION" character_set_client="utf8mb4" collation_connection="utf8mb4_0900_ai_ci" Database_Collation="utf8mb4_0900_ai_ci" Created="2023-05-08 20:23:32.52">
+<![CDATA[
+CREATE DEFINER=`root`@`localhost` TRIGGER `Purchase_Order_Price` AFTER INSERT ON `consist_of` FOR EACH ROW BEGIN
+	UPDATE `Order`
+    SET `Total_Cost` = (
+		SELECT `Price`
+        FROM `Component`
+        WHERE NEW.`Component_Model` = `component`.`Model`
+        ) * NEW.`Quantity`
+	WHERE `Order`.`Order_ID` = NEW.`Order_ID`;
+END
+]]>
+		</trigger>
+	</triggers>
+</database>
+</mysqldump>
