@@ -4,18 +4,22 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.Hibernate;
 
 import java.io.Serializable;
 import java.util.Objects;
 
+@AllArgsConstructor
+@NoArgsConstructor
 @Getter
 @Setter
 @Embeddable
 public class OfferId implements Serializable {
-    private static final long serialVersionUID = 2365135061918116631L;
+    private static final long serialVersionUID = 3388630875875131047L;
     @Size(max = 50)
     @NotNull
     @Column(name = "Component_Model", nullable = false, length = 50)

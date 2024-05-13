@@ -3,18 +3,21 @@ package com.nuggets.advDB.model;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
+@AllArgsConstructor
+@NoArgsConstructor
 @Getter
 @Setter
 @Entity
 @Table(name = "person", schema = "carservicecenter")
-@MappedSuperclass
 public class Person {
     @Id
     @Size(max = 14)
@@ -42,16 +45,7 @@ public class Person {
     @Column(name = "Last_Name", nullable = false, length = 50)
     private String lastName;
 
-    @OneToOne(mappedBy = "person")
-    private Customer customer;
-
-    @OneToOne(mappedBy = "person")
-    private Employee employee;
-
     @OneToMany(mappedBy = "person")
     private Set<PersonPhoneNo> personPhoneNos = new LinkedHashSet<>();
-
-    @OneToOne(mappedBy = "person")
-    private Supplier supplier;
 
 }

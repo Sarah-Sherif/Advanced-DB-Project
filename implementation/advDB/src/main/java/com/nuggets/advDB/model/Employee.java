@@ -2,7 +2,10 @@ package com.nuggets.advDB.model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
@@ -10,11 +13,29 @@ import org.hibernate.annotations.OnDeleteAction;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
+@AllArgsConstructor
+@NoArgsConstructor
 @Getter
 @Setter
 @Entity
-@MappedSuperclass
-public class Employee extends Person{
+@Table(name = "employee", schema = "carservicecenter", indexes = {
+        @Index(name = "Center_ID", columnList = "Center_ID")
+})
+public class Employee {
+    @Id
+    @Size(max = 14)
+    @Column(name = "E_SSN", nullable = false, length = 14)
+    private String eSsn;
+
+    @MapsId
+    @OneToOne(fetch = FetchType.LAZY, optional = false)
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    @JoinColumn(name = "E_SSN", nullable = false)
+    private Person person;
+
+    @NotNull
+    @Column(name = "Salary", nullable = false)
+    private Double salary;
 
     @NotNull
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
@@ -27,16 +48,7 @@ public class Employee extends Person{
     @Column(name = "Role", nullable = false)
     private String role;
 
-    @OneToOne(mappedBy = "employee")
-    private Engineer engineer;
-
-    @OneToOne(mappedBy = "employee")
-    private SalesMan salesMan;
     @OneToMany(mappedBy = "mSsn")
-    private Set<ServiceCenter> serviceCenters = new LinkedHashSet<>();
-
-
-    @Column(name = "Salary", columnDefinition = "float(0, 0) UNSIGNED not null")
-    private double salary;
+    private Set<ServiceCenter> serviceCenter = new LinkedHashSet<>();
 
 }

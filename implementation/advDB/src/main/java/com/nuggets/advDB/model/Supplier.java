@@ -1,27 +1,38 @@
 package com.nuggets.advDB.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.Size;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import java.util.LinkedHashSet;
 import java.util.Set;
 
+@AllArgsConstructor
+@NoArgsConstructor
 @Getter
 @Setter
 @Entity
-public class Supplier extends Person{
+@Table(name = "supplier", schema = "carservicecenter")
+public class Supplier {
+    @Id
+    @Size(max = 14)
+    @Column(name = "S_SSN", nullable = false, length = 14)
+    private String sSsn;
+
+    @MapsId
+    @OneToOne(fetch = FetchType.LAZY, optional = false)
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    @JoinColumn(name = "S_SSN", nullable = false)
+    private Person person;
 
     @Size(max = 255)
     @Column(name = "Website")
     private String website;
-
-    @ManyToMany(mappedBy = "suppliers")
-    private Set<Component> components = new LinkedHashSet<>();
 
     @OneToMany(mappedBy = "sSsn")
     private Set<PurchaseOrder> purchaseOrders = new LinkedHashSet<>();

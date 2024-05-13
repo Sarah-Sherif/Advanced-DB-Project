@@ -1,17 +1,21 @@
 package com.nuggets.advDB.model;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.LinkedHashSet;
-import java.util.Set;
-
+@AllArgsConstructor
+@NoArgsConstructor
 @Getter
 @Setter
 @Entity
-@MappedSuperclass
 @Table(name = "component", schema = "carservicecenter")
 public class Component {
     @Id
@@ -19,28 +23,8 @@ public class Component {
     @Column(name = "Model", nullable = false, length = 50)
     private String model;
 
-    @Column(name = "Price", columnDefinition = "float(0, 0) UNSIGNED not null")
+    @NotNull
+    @Column(name = "Price", nullable = false)
     private Double price;
-
-    @OneToOne(mappedBy = "component")
-    private Battery battery;
-
-    @OneToOne(mappedBy = "component")
-    private Body body;
-
-    @OneToMany(mappedBy = "component")
-    private Set<ConsistOf> consistOfs = new LinkedHashSet<>();
-
-    @OneToOne(mappedBy = "component")
-    private Engine engine;
-
-    @OneToMany(mappedBy = "componentModel")
-    private Set<MaintenanceTask> maintenanceTasks = new LinkedHashSet<>();
-
-    @ManyToMany(mappedBy = "component")
-    private Set<Supplier> suppliers = new LinkedHashSet<>();
-
-    @OneToOne(mappedBy = "component")
-    private Transmission transmission;
 
 }

@@ -4,18 +4,22 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.Hibernate;
 
 import java.io.Serializable;
 import java.util.Objects;
 
+@AllArgsConstructor
+@NoArgsConstructor
 @Getter
 @Setter
 @Embeddable
 public class PersonPhoneNoId implements Serializable {
-    private static final long serialVersionUID = -8899235374506095240L;
+    private static final long serialVersionUID = 7010765747005548903L;
     @Size(max = 14)
     @NotNull
     @Column(name = "SSN", nullable = false, length = 14)

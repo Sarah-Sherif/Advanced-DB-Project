@@ -2,7 +2,9 @@ package com.nuggets.advDB.model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
@@ -11,6 +13,8 @@ import java.time.LocalDate;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
+@AllArgsConstructor
+@NoArgsConstructor
 @Getter
 @Setter
 @Entity
@@ -31,6 +35,10 @@ public class MaintenanceTask {
     private LocalDate taskDate;
 
     @NotNull
+    @Column(name = "Price", nullable = false)
+    private Double price;
+
+    @NotNull
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinColumn(name = "Center_ID", nullable = false)
@@ -48,14 +56,7 @@ public class MaintenanceTask {
     @JoinColumn(name = "Order_ID", nullable = false)
     private RepairOrder order;
 
-    @NotNull
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @OnDelete(action = OnDeleteAction.CASCADE)
-    @JoinColumn(name = "Component_Model", nullable = false)
-    private Component componentModel;
     @ManyToMany(mappedBy = "maintenanceTasks")
     private Set<Engineer> engineers = new LinkedHashSet<>();
 
-    @Column(name = "Price", columnDefinition = "float(0, 0) UNSIGNED not null")
-    private double price;
 }

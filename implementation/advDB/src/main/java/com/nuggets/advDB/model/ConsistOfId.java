@@ -4,18 +4,22 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.Hibernate;
 
 import java.io.Serializable;
 import java.util.Objects;
 
+@AllArgsConstructor
+@NoArgsConstructor
 @Getter
 @Setter
 @Embeddable
 public class ConsistOfId implements Serializable {
-    private static final long serialVersionUID = 5617724842272390855L;
+    private static final long serialVersionUID = 9109236138278742364L;
     @Column(name = "Order_ID", columnDefinition = "int UNSIGNED not null")
     private Long orderId;
 

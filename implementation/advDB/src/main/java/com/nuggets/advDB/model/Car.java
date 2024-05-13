@@ -3,7 +3,9 @@ package com.nuggets.advDB.model;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
@@ -11,6 +13,8 @@ import org.hibernate.annotations.OnDeleteAction;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
+@AllArgsConstructor
+@NoArgsConstructor
 @Getter
 @Setter
 @Entity
@@ -28,17 +32,12 @@ public class Car {
     @NotNull
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "Model_Name", nullable = false, referencedColumnName = "Model_Name")
-    private Model modelName;
-
-    @NotNull
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "Model_Year", nullable = false, referencedColumnName = "Model_Year")
-    private Model modelYear;
+    private Model model;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinColumn(name = "SSN")
-    private Customer ssn;
+    private Customer customer;
 
     @OneToMany(mappedBy = "plateNo")
     private Set<MaintenanceTask> maintenanceTasks = new LinkedHashSet<>();

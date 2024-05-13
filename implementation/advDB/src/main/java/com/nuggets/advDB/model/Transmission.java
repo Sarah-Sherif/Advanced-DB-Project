@@ -1,16 +1,24 @@
 package com.nuggets.advDB.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Lob;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+@AllArgsConstructor
+@NoArgsConstructor
 @Getter
 @Setter
 @Entity
-public class Transmission extends Component {
+@Table(name = "transmission", schema = "carservicecenter")
+public class Transmission {
+    @Id
+    @Size(max = 50)
+    @Column(name = "Model", nullable = false, length = 50)
+    private String model;
 
     @NotNull
     @Lob

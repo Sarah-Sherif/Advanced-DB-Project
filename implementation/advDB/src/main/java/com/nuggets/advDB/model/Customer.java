@@ -1,20 +1,35 @@
 package com.nuggets.advDB.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import java.util.LinkedHashSet;
 import java.util.Set;
 
+@AllArgsConstructor
+@NoArgsConstructor
 @Getter
 @Setter
 @Entity
-public class Customer extends Person {
+@Table(name = "customer", schema = "carservicecenter")
+public class Customer {
+    @Id
+    @Size(max = 14)
+    @Column(name = "C_SSN", nullable = false, length = 14)
+    private String cSsn;
+
+    @MapsId
+    @OneToOne(fetch = FetchType.LAZY, optional = false)
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    @JoinColumn(name = "C_SSN", nullable = false)
+    private Person person;
 
     @Size(max = 20)
     @NotNull

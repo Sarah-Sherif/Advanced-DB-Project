@@ -4,18 +4,22 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.Hibernate;
 
 import java.io.Serializable;
 import java.util.Objects;
 
+@AllArgsConstructor
+@NoArgsConstructor
 @Getter
 @Setter
 @Embeddable
 public class PerformId implements Serializable {
-    private static final long serialVersionUID = -7191182513649267404L;
+    private static final long serialVersionUID = -7182910180953609155L;
     @Size(max = 14)
     @NotNull
     @Column(name = "SSN", nullable = false, length = 14)

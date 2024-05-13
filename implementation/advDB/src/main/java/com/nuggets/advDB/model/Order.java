@@ -2,17 +2,18 @@ package com.nuggets.advDB.model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
-import java.util.LinkedHashSet;
-import java.util.Set;
 
+@AllArgsConstructor
+@NoArgsConstructor
 @Getter
 @Setter
 @Entity
-@MappedSuperclass
 @Table(name = "`order`", schema = "carservicecenter")
 public class Order {
     @Id
@@ -33,14 +34,7 @@ public class Order {
     @Column(name = "Date", nullable = false)
     private LocalDate date;
 
-    @OneToMany(mappedBy = "order")
-    private Set<ConsistOf> consistOfs = new LinkedHashSet<>();
+    @Column(name = "Total_Cost")
+    private Double totalCost;
 
-    @OneToOne(mappedBy = "order")
-    private PurchaseOrder purchaseOrder;
-    @OneToOne(mappedBy = "order")
-    private RepairOrder repairOrder;
-
-    @Column(name = "Total_Cost", columnDefinition = "float(0, 0) UNSIGNED")
-    private double totalCost;
 }

@@ -4,18 +4,22 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.Hibernate;
 
 import java.io.Serializable;
 import java.util.Objects;
 
+@AllArgsConstructor
+@NoArgsConstructor
 @Getter
 @Setter
 @Embeddable
 public class ModelId implements Serializable {
-    private static final long serialVersionUID = 689828213281238604L;
+    private static final long serialVersionUID = 2977873286583876783L;
     @Size(max = 10)
     @NotNull
     @Column(name = "Model_Name", nullable = false, length = 10)

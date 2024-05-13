@@ -1,11 +1,15 @@
 package com.nuggets.advDB.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
+@AllArgsConstructor
+@NoArgsConstructor
 @Getter
 @Setter
 @Entity
@@ -21,12 +25,6 @@ public class ConsistOf {
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinColumn(name = "Order_ID", nullable = false)
     private Order order;
-
-    @MapsId("componentModel")
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @OnDelete(action = OnDeleteAction.CASCADE)
-    @JoinColumn(name = "Component_Model", nullable = false)
-    private Component componentModel;
 
     @Column(name = "Quantity", columnDefinition = "smallint UNSIGNED not null")
     private Integer quantity;
