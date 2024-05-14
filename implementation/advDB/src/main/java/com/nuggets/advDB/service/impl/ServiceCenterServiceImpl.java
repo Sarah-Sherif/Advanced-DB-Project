@@ -34,4 +34,11 @@ public class ServiceCenterServiceImpl implements ServiceCenterService {
 
         serviceCenterRepository.save(new ServiceCenter(city, streetNo, buildingNo, district, employeeRepository.findByPerson_Ssn(managerSSN).get()));
     }
+
+    @Override
+    public void incrementServiceCenterNoOfEmployees(Long centerID) {
+        ServiceCenter serviceCenter = serviceCenterRepository.findById(centerID).get();
+        serviceCenter.setNoOfEmployees(serviceCenter.getNoOfEmployees() + 1);
+        serviceCenterRepository.save(serviceCenter);
+    }
 }

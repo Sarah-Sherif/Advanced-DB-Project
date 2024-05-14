@@ -9,4 +9,7 @@ import java.util.Optional;
 public interface ServiceCenterRepository extends JpaRepository<ServiceCenter, Long> {
 
     Optional<ServiceCenter> findByManager_ESsn(@NonNull String eSsn);
+
+    @Override
+    Optional<ServiceCenter> findById(Long aLong);
 }

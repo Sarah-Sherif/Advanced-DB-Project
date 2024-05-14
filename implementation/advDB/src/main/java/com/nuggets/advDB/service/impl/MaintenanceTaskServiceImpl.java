@@ -4,6 +4,7 @@ package com.nuggets.advDB.service.impl;
 import com.nuggets.advDB.model.MaintenanceTask;
 import com.nuggets.advDB.model.repository.*;
 import com.nuggets.advDB.service.MaintenanceTaskService;
+import com.nuggets.advDB.service.RepairOrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,14 +28,18 @@ public class MaintenanceTaskServiceImpl implements MaintenanceTaskService {
     @Autowired
     private final CarRepository carRepository;
 
+    @Autowired
+    private final RepairOrderService repairOrderService;
+
 
     public MaintenanceTaskServiceImpl(MaintenanceTaskRepository maintenanceTaskRepository, RepairOrderRepository repairOrderRepository, ComponentRepository componentRepository, ServiceCenterRepository serviceCenterRepository,
-                                      CarRepository carRepository) {
+                                      CarRepository carRepository, RepairOrderService repairOrderService) {
         this.maintenanceTaskRepository = maintenanceTaskRepository;
         this.repairOrderRepository = repairOrderRepository;
         this.componentRepository = componentRepository;
         this.serviceCenterRepository = serviceCenterRepository;
         this.carRepository = carRepository;
+        this.repairOrderService = repairOrderService;
     }
 
 
@@ -52,6 +57,10 @@ public class MaintenanceTaskServiceImpl implements MaintenanceTaskService {
             throw new IllegalArgumentException("Component with model " + componentModel + " does not exist");
         }
 
-        maintenanceTaskRepository.save(new MaintenanceTask(taskDate, price, serviceCenterRepository.findById(centerID).get(), carRepository.findByPlateNo(plateNO).get(), repairOrderRepository.findById(orderID).get()));
+        maintenanceTaskRepository.save(new MaintenanceTask(taskDate, price, serviceCenterRepository.findById(centerID).get(),
+                carRepository.findByPlateNo(plateNO).get(), repairOrderRepository.findById(orderID).get()));
+
+        repairOrderService.updateRepairOrderTotalCost(orderID, price);
+
     }
 }

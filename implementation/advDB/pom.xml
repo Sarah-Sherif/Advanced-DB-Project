@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.nuggets</groupId>
-	<artifactId>advDB</artifactId>
+	<artifactId>application</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>car-service-center</name>
 	<description>Car Service Center Application</description>
