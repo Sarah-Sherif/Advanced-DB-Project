@@ -57,4 +57,12 @@ public class RepairOrder {
     @OneToMany(mappedBy = "order")
     private Set<MaintenanceTask> maintenanceTasks = new LinkedHashSet<>();
 
+    public RepairOrder(Order order, Customer customer, String city, Integer streetNo, Long buildingNo, String district) {
+        this.order = order;
+        this.customer = customer;
+        this.city = city;
+        this.streetNo = streetNo;
+        this.buildingNo = buildingNo;
+        this.district = district;
+    }
 }

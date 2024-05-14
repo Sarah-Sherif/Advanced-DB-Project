@@ -23,4 +23,7 @@ public class Body {
     @Column(name = "Chassis_Type")
     private String chassisType;
 
+    public Body(String model) {
+        this.model = model;
+    }
 }

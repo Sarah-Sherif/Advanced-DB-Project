@@ -48,4 +48,12 @@ public class Person {
     @OneToMany(mappedBy = "person")
     private Set<PersonPhoneNo> personPhoneNos = new LinkedHashSet<>();
 
+    public Person(String ssn, String birthdate, String email, String firstName, String middleName, String lastName) {
+        this.ssn = ssn;
+        this.birthdate = LocalDate.parse(birthdate);
+        this.email = email;
+        this.firstName = firstName;
+        this.middleName = middleName;
+        this.lastName = lastName;
+    }
 }

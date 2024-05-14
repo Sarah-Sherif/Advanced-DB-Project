@@ -37,4 +37,9 @@ public class Supplier {
     @OneToMany(mappedBy = "sSsn")
     private Set<PurchaseOrder> purchaseOrders = new LinkedHashSet<>();
 
+    public Supplier(String ssn, Person person, String website) {
+        this.sSsn = ssn;
+        this.person = person;
+        this.website = website;
+    }
 }

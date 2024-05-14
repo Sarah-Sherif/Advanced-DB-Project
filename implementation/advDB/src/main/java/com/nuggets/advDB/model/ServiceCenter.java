@@ -26,7 +26,7 @@ public class ServiceCenter {
     private Long id;
 
     @Column(name = "NO_of_Employees", columnDefinition = "int UNSIGNED")
-    private Long noOfEmployees;
+    private Long noOfEmployees = 0L;
 
     @Size(max = 20)
     @NotNull
@@ -55,4 +55,11 @@ public class ServiceCenter {
     @OneToMany(mappedBy = "center")
     private Set<MaintenanceTask> maintenanceTasks = new LinkedHashSet<>();
 
+    public ServiceCenter(String city, Integer streetNo, Long buildingNo, String district, Employee manager) {
+        this.city = city;
+        this.streetNo = streetNo;
+        this.buildingNo = buildingNo;
+        this.district = district;
+        this.manager = manager;
+    }
 }

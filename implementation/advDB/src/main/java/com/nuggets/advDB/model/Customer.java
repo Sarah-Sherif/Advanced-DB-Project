@@ -53,4 +53,12 @@ public class Customer {
     @OneToMany(mappedBy = "cSsn")
     private Set<RepairOrder> repairOrders = new LinkedHashSet<>();
 
+    public Customer(String ssn, String city, Integer streetNo, Long buildingNo, String district) {
+//        implement the constructor
+        this.cSsn = ssn;
+        this.city = city;
+        this.streetNo = streetNo;
+        this.buildingNo = buildingNo;
+        this.district = district;
+    }
 }

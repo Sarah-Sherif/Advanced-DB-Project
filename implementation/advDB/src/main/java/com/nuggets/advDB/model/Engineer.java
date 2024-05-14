@@ -40,4 +40,8 @@ public class Engineer {
             inverseJoinColumns = @JoinColumn(name = "Task_ID"))
     private Set<MaintenanceTask> maintenanceTasks = new LinkedHashSet<>();
 
+    public Engineer(String ssn, Employee employee) {
+        this.eSsn = ssn;
+        this.employee = employee;
+    }
 }

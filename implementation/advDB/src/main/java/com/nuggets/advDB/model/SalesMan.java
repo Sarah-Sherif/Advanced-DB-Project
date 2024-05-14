@@ -30,4 +30,8 @@ public class SalesMan {
     @Column(name = "Sales_Made", columnDefinition = "int UNSIGNED")
     private Long salesMade;
 
+    public SalesMan(String ssn, Employee employee) {
+        this.smSsn = ssn;
+        this.employee = employee;
+    }
 }

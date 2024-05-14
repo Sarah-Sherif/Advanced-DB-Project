@@ -51,4 +51,11 @@ public class Employee {
     @OneToMany(mappedBy = "mSsn")
     private Set<ServiceCenter> serviceCenter = new LinkedHashSet<>();
 
+    public Employee(String ssn, Person person, Double salary, ServiceCenter center, String role) {
+        this.eSsn = ssn;
+        this.person = person;
+        this.salary = salary;
+        this.center = center;
+        this.role = role;
+    }
 }

@@ -40,4 +40,9 @@ public class PurchaseOrder {
     @JoinColumn(name = "S_SSN", nullable = false)
     private Supplier supplier;
 
+    public PurchaseOrder(Order order, LocalDate deliveryDate, Supplier supplier) {
+        this.order = order;
+        this.deliveryDate = deliveryDate;
+        this.supplier = supplier;
+    }
 }

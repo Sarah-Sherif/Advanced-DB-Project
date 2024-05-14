@@ -37,4 +37,9 @@ public class Order {
     @Column(name = "Total_Cost")
     private Double totalCost;
 
+    public Order(String status, String paymentMethod, LocalDate date) {
+        this.status = status;
+        this.paymentMethod = paymentMethod;
+        this.date = date;
+    }
 }

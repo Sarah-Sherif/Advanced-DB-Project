@@ -42,4 +42,9 @@ public class Car {
     @OneToMany(mappedBy = "plateNo")
     private Set<MaintenanceTask> maintenanceTasks = new LinkedHashSet<>();
 
+    public Car(String plateNo, Model model, Customer customer) {
+        this.plateNo = plateNo;
+        this.model = model;
+        this.customer = customer;
+    }
 }

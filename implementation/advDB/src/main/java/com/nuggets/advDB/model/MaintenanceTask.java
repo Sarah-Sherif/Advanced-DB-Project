@@ -59,4 +59,11 @@ public class MaintenanceTask {
     @ManyToMany(mappedBy = "maintenanceTasks")
     private Set<Engineer> engineers = new LinkedHashSet<>();
 
+    public MaintenanceTask(LocalDate taskDate, Double price, ServiceCenter serviceCenter, Car car, RepairOrder order) {
+        this.taskDate = taskDate;
+        this.price = price;
+        this.center = serviceCenter;
+        this.plateNo = car;
+        this.order = order;
+    }
 }
