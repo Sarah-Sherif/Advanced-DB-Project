@@ -36,4 +36,9 @@ public class Car {
     })
     private Model model;
 
+    public Car(String plateNo, Customer customer, Model model) {
+        this.plateNo = plateNo;
+        this.customer = customer;
+        this.model = model;
+    }
 }

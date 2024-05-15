@@ -18,4 +18,9 @@ public class Battery extends Component {
     @Column(name = "expiry_date")
     @JdbcTypeCode(SqlTypes.DATE)
     private String expiryDate;
+
+    public Battery(String model, String expiryDate) {
+        this.setComponentModel(model);
+        this.expiryDate = expiryDate;
+    }
 }

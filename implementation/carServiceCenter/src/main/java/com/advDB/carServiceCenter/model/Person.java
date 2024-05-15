@@ -44,11 +44,21 @@ public class Person {
     @ElementCollection
     @Column(name = "phone_no")
     @CollectionTable(name = "phone_NO", joinColumns = @JoinColumn(name = "ssn"))
-    private Set<char[]> phone_NO = new LinkedHashSet<>();
+    private Set<String> phone_NO = new LinkedHashSet<>();
 
     @Email
     @Column(name = "email", nullable = false)
     @JdbcTypeCode(SqlTypes.VARCHAR)
     private String email;
+
+    public Person(Long ssn, String firstName, String middleName, String lastName, String birthDate, String phoneNo, String email) {
+        this.ssn = ssn;
+        this.firstName = firstName;
+        this.middleName = middleName;
+        this.lastName = lastName;
+        this.birthDate = birthDate;
+        this.email = email;
+        this.phone_NO.add(phoneNo);
+    }
 
 }

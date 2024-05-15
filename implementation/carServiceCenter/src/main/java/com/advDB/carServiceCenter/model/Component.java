@@ -24,9 +24,14 @@ public class Component {
     private String componentModel;
 
     @Column(name = "price")
-    @JdbcTypeCode(SqlTypes.FLOAT)
-    private String price;
+    @JdbcTypeCode(SqlTypes.DOUBLE)
+    private Double price;
 
     @ManyToMany(mappedBy = "componentsOffered")
     private Set<Supplier> suppliers = new LinkedHashSet<>();
+
+    public Component(String model, Double price) {
+        this.componentModel = model;
+        this.price = price;
+    }
 }

@@ -30,8 +30,8 @@ public class MaintenanceTask {
     private String taskDate;
 
     @Column(name = "price")
-    @JdbcTypeCode(SqlTypes.FLOAT)
-    private String price;
+    @JdbcTypeCode(SqlTypes.DOUBLE)
+    private Double price;
 
     @ManyToMany(mappedBy = "maintenanceTasks")
     private Set<Engineer> engineers = new LinkedHashSet<>();

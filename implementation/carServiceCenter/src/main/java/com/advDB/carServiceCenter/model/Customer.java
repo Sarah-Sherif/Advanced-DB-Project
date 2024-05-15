@@ -29,16 +29,24 @@ public class Customer extends Person {
 
     @Column(name = "street_no")
     @JdbcTypeCode(SqlTypes.INTEGER)
-    private String streetNo;
+    private Integer streetNo;
 
     @Column(name = "building_no")
     @JdbcTypeCode(SqlTypes.INTEGER)
-    private String buildingNo;
+    private Integer buildingNo;
 
     @OneToMany(mappedBy = "customer", orphanRemoval = true)
     private Set<Car> cars = new LinkedHashSet<>();
 
     @OneToMany(mappedBy = "customer", orphanRemoval = true)
     private Set<RepairOrder> repairOrders = new LinkedHashSet<>();
+
+    public Customer(Long ssn, String city, Integer streetNo, Integer buildingNo, String district, String firstName, String middleName, String lastName, String birthDate, String phoneNo, String email) {
+        super(ssn, firstName, middleName, lastName, birthDate, phoneNo, email);
+        this.city = city;
+        this.streetNo = streetNo;
+        this.buildingNo = buildingNo;
+        this.district = district;
+    }
 
 }
