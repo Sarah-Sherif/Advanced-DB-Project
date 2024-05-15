@@ -1,18 +1,21 @@
 package com.advDB.carServiceCenter.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.EmbeddedId;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.JdbcTypeCode;
 import org.hibernate.type.SqlTypes;
 
+@AllArgsConstructor
+@NoArgsConstructor
 @Getter
 @Setter
 @Entity
-@Table(name = "model")
+@Table(name = "model", indexes = {
+        @Index(name = "idx_model_model_name", columnList = "model_name, model_year")
+})
 public class Model {
     @EmbeddedId
     private ModelId modelId;

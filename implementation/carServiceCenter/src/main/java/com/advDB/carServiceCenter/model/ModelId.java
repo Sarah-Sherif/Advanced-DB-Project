@@ -2,24 +2,24 @@ package com.advDB.carServiceCenter.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.hibernate.Hibernate;
 
 import java.io.Serializable;
 import java.util.Objects;
 
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
 @Embeddable
 public class ModelId implements Serializable {
     private String modelName;
     @Column(nullable = false)
     private int modelYear;
-
-    public String getModelName() {
-        return modelName;
-    }
-
-    public int getModelYear() {
-        return modelYear;
-    }
 
     @Override
     public boolean equals(Object o) {
