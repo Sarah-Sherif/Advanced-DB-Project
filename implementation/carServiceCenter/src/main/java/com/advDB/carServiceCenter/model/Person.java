@@ -1,6 +1,7 @@
 package com.advDB.carServiceCenter.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -44,4 +45,10 @@ public class Person {
     @Column(name = "phone_no")
     @CollectionTable(name = "phone_NO", joinColumns = @JoinColumn(name = "ssn"))
     private Set<char[]> phone_NO = new LinkedHashSet<>();
+
+    @Email
+    @Column(name = "email", nullable = false)
+    @JdbcTypeCode(SqlTypes.VARCHAR)
+    private String email;
+
 }

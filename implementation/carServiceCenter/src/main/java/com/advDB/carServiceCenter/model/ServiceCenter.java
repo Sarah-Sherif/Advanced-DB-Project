@@ -21,8 +21,10 @@ import java.util.Set;
 })
 public class ServiceCenter {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "center_id", nullable = false)
-    private String centerID;
+    @JdbcTypeCode(SqlTypes.INTEGER)
+    private Integer centerID;
 
     @Column(name = "city")
     @JdbcTypeCode(SqlTypes.VARCHAR)

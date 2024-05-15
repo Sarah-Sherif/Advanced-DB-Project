@@ -17,7 +17,7 @@ import org.hibernate.type.SqlTypes;
 @Setter
 @Entity
 @Table(name = "Employee", indexes = {
-        @Index(name = "idx_employee", columnList = "service_center_id")
+        @Index(name = "idx_employee", columnList = "center_id")
 })
 @Inheritance(strategy = InheritanceType.JOINED)
 public class Employee extends Person {
@@ -30,7 +30,7 @@ public class Employee extends Person {
     private String salary;
 
     @ManyToOne(optional = false)
-    @JoinColumn(name = "service_center_id", nullable = false)
+    @JoinColumn(name = "center_id", nullable = false)
     private ServiceCenter serviceCenter;
 
 }

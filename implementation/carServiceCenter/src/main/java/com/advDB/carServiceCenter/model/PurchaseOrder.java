@@ -8,9 +8,6 @@ import lombok.Setter;
 import org.hibernate.annotations.JdbcTypeCode;
 import org.hibernate.type.SqlTypes;
 
-import java.util.LinkedHashSet;
-import java.util.Set;
-
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -27,11 +24,5 @@ public class PurchaseOrder extends Order {
     @ManyToOne(optional = false)
     @JoinColumn(name = "supplier_ssn", nullable = false)
     private Supplier supplier;
-
-    @ManyToMany
-    @JoinTable(name = "purchase_order_components",
-            joinColumns = @JoinColumn(name = "purchase_order_id"),
-            inverseJoinColumns = @JoinColumn(name = "component_model"))
-    private Set<Component> components = new LinkedHashSet<>();
 
 }

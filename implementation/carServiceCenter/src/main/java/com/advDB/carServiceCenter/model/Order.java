@@ -17,11 +17,13 @@ import org.hibernate.type.SqlTypes;
 @Inheritance(strategy = InheritanceType.JOINED)
 public class Order {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "order_id", nullable = false)
-    private String orderId;
+    @JdbcTypeCode(SqlTypes.INTEGER)
+    private Integer orderId;
 
     @Column(name = "status")
-    @JdbcTypeCode(SqlTypes.BOOLEAN)
+    @JdbcTypeCode(SqlTypes.VARCHAR)
     private String status;
 
     @Column(name = "payment_method")

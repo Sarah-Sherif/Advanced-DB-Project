@@ -17,12 +17,13 @@ import java.util.Set;
 @Setter
 @Entity
 @Table(name = "maintenance_task", indexes = {
-        @Index(name = "idx_maintenancetask", columnList = "service_center_id, repair_order_id")
+        @Index(name = "idx_maintenancetask", columnList = "center_id, repair_order_id")
 })
 public class MaintenanceTask {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "task_id", nullable = false)
-    private String taskId;
+    private Integer taskId;
 
     @Column(name = "task_date")
     @JdbcTypeCode(SqlTypes.DATE)
@@ -36,7 +37,7 @@ public class MaintenanceTask {
     private Set<Engineer> engineers = new LinkedHashSet<>();
 
     @ManyToOne
-    @JoinColumn(name = "service_center_id")
+    @JoinColumn(name = "center_id")
     private ServiceCenter serviceCenter;
 
     @ManyToOne(optional = false)
