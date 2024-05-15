@@ -1,0 +1,78 @@
+let $engineer_updates :=
+    <updates>
+        <Engineer>
+            <E_SSN>96012101300120</E_SSN>
+            <Specialization>Mechanical</Specialization>
+        </Engineer>
+        <Engineer>
+            <E_SSN>91020901100485</E_SSN>
+            <Specialization>Civil</Specialization>
+        </Engineer>
+        <Engineer>
+            <E_SSN>98031201500319</E_SSN>
+            <Specialization>Electrical</Specialization>
+        </Engineer>
+        <Engineer>
+            <E_SSN>90052301300185</E_SSN>
+            <Specialization>Software</Specialization>
+        </Engineer>
+    </updates>
+
+let $salesman_updates :=
+    <updates>
+        <Sales_Man>
+            <SM_SSN>93071701200417</SM_SSN>
+            <Sales_Made>100</Sales_Made>
+        </Sales_Man>
+        <Sales_Man>
+            <SM_SSN>88112501100176</SM_SSN>
+            <Sales_Made>200</Sales_Made>
+        </Sales_Man>
+        <Sales_Man>
+            <SM_SSN>94060901200185</SM_SSN>
+            <Sales_Made>150</Sales_Made>
+        </Sales_Man>
+        <Sales_Man>
+            <SM_SSN>95022501200146</SM_SSN>
+            <Sales_Made>75</Sales_Made>
+        </Sales_Man>
+    </updates>
+
+let $chassis_type_updates :=
+    <updates>
+        <Body>
+            <Model>A123</Model>
+            <Chassis_Type>Sedan</Chassis_Type>
+        </Body>
+        <Body>
+            <Model>A456</Model>
+            <Chassis_Type>SUV</Chassis_Type>
+        </Body>
+        <Body>
+            <Model>A789</Model>
+            <Chassis_Type>Hatchback</Chassis_Type>
+        </Body>
+    </updates>
+
+let $salary_updates :=
+    <updates>
+        <Employee>
+            <Role>Engineer</Role>
+            <Salary_Increase_Percentage>10%</Salary_Increase_Percentage>
+            <City>Alexandria</City>
+        </Employee>
+        <Employee>
+            <Role>Sales Man</Role>
+            <Sales_Threshold>100</Sales_Threshold>
+            <Salary_Increase_Percentage>5%</Salary_Increase_Percentage>
+            <Salary_Decrease_Percentage>5%</Salary_Decrease_Percentage>
+            <City>Alexandria</City>
+        </Employee>
+    </updates>
+
+return (
+    $engineer_updates,
+    $salesman_updates,
+    $chassis_type_updates,
+    $salary_updates
+)
