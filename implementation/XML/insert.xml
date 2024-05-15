@@ -1,0 +1,118 @@
+let $person_data := (
+    ('96012101300120', '1996-01-21', 'ahmed.mohamed@gmail.com', 'Ahmed', 'Mohamed', 'Ali'),
+    ('93071701200417', '1993-07-17', 'yasmine.ahmed@gmail.com', 'Yasmine', 'Ahmed', 'Khalil'),
+    ('91020901100485', '1991-02-09', 'mohamed.karim@gmail.com', 'Mohamed', 'Karim', 'Said'),
+    ('88112501100176', '1988-11-25', 'nour.eldeen.mostafa@gmail.com', 'Nour Eldeen', 'Mostafa', 'Abdallah'),
+    ('98031201500319', '1998-03-12', 'nada.mahmoud@gmail.com', 'Nada', 'Mahmoud', 'Mahmoud'),
+    ('94060901200185', '1994-06-09', 'mohamed.mohsen@gmail.com', 'Mohamed', 'Mohsen', 'Gaber'),
+    ('90052301300185', '1990-05-23', 'reem.ahmed@gmail.com', 'Reem', 'Ahmed', 'Hassan'),
+    ('29304152804122', '1992-06-15', 'ahmed.mohamed@gmail.com', 'Ahmed', 'Ali', 'Mohamed'),
+    ('70101432805243', '1985-02-25', 'fatma.hassan@gmail.com', 'Fatma', 'Mahmoud', 'Hassan'),
+    ('24703082706851', '1997-08-27', 'nour.eldeen.mahmoud@gmail.com', 'Nour Eldeen', '', 'Mahmoud'),
+    ('28801032905237', '1994-03-29', 'marwa.abdullah@gmail.com', 'Marwa', 'Mohamed', 'Abdullah'),
+    ('78701252907252', '1989-12-05', 'youssef.samir@gmail.com', 'Youssef', 'Samir', 'Mohamed'),
+    ('12345678901234', '1980-05-12', 'ahmed123@gmail.com', 'Ahmed', 'Ali', 'Khalil'),
+    ('23456789012345', '1995-02-28', 'mohamed456@gmail.com', 'Mohamed', '', 'Hassan'),
+    ('95022501200146', '1995-02-25', 'kareem.ahmed@gmail.com', 'Kareem', 'Ahmed', 'Hassan'),
+    ('97010701700418', '1997-01-07', 'ahmed.farouk@gmail.com', 'Ahmed', 'Farouk', 'Saeed'),
+    ('88061701300306', '1988-06-17', 'mona.hamdy@gmail.com', 'Mona', 'Hamdy', 'Ali'),
+    ('91052101500785', '1991-05-21', 'nour.salah@gmail.com', 'Nour', 'Salah', 'Hassan'),
+    ('96102103500871', '1996-10-21', 'ahmedmohamed@gmail.com', 'Mostafa', 'Mohamed', 'Ali'),
+    ('91052603700351', '1991-05-26', 'fatmahassan@gmail.com', 'Fatma', 'Hassan', 'Saleh')
+)
+
+let $phone_data := (
+    ('96012101300120', '01234567890'),
+    ('93071701200417', '01234567891'),
+    ('91020901100485', '01234567892'),
+    ('88112501100176', '01234567893'),
+    ('98031201500319', '01234567894'),
+    ('29304152804122', '01234567895'),
+    ('90052301300185', '01234567896'),
+    ('94060901200185', '01234567897'),
+    ('29304152804122', '01028571935'),
+    ('70101432805243', '01190736521'),
+    ('24703082706851', '01062980431'),
+    ('28801032905237', '01135716849'),
+    ('78701252907252', '01268357469'),
+    ('12345678901234', '01234567890'),
+    ('23456789012345', '01123456789'),
+    ('97010701700418', '01012345678'),
+    ('88061701300306', '01123456789'),
+    ('91052101500785', '01234567890'),
+    ('96102103500871', '01099887766'),
+    ('91052603700351', '01233445566')
+)
+
+let $customer_data := (
+    ('97010701700418', 'Cairo', 23, 5, 'Maadi'),
+    ('88061701300306', 'Alexandria', 16, 8, 'Gleem'),
+    ('91052101500785', 'Giza', 7, 12, 'Mohandeseen'),
+    ('24703082706851', 'Giza', 15, 45, 'El Mohandessin'),
+    ('28801032905237', 'Alexandria', 10, 23, 'Sidi Gaber'),
+    ('78701252907252', 'Cairo', 5, 12, 'Nasr City')
+)
+
+let $supplier_data := (
+    ('70101432805243', 'https://egyptiancarservice.com'),
+    ('96102103500871', 'https://www.egyptianautoparts.com'),
+    ('91052603700351', 'https://www.egyptiancarparts.com'),
+    ('29304152804122', 'https://www.servemycar.com')
+)
+
+let $service_center_data := (
+    ('Cairo', 10, 25, 'Giza', '12345678901234'),
+    ('Alexandria', 5, 12, 'Raml Station', '23456789012345')
+)
+
+return (
+    for $person in $person_data
+    return
+        <insert>
+            <table name="Person">
+                <values>
+                    <value>{$person}</value>
+                </values>
+            </table>
+        </insert>,
+    
+    for $phone in $phone_data
+    return
+        <insert>
+            <table name="Person_Phone_NO">
+                <values>
+                    <value>{$phone}</value>
+                </values>
+            </table>
+        </insert>,
+    
+    for $customer in $customer_data
+    return
+        <insert>
+            <table name="Customer">
+                <values>
+                    <value>{$customer}</value>
+                </values>
+            </table>
+        </insert>,
+    
+    for $supplier in $supplier_data
+    return
+        <insert>
+            <table name="Supplier">
+                <values>
+                    <value>{$supplier}</value>
+                </values>
+            </table>
+        </insert>,
+    
+    for $service_center in $service_center_data
+    return
+        <insert>
+            <table name="Service_Center">
+                <values>
+                    <value>{$service_center}</value>
+                </values>
+            </table>
+        </insert>
+)

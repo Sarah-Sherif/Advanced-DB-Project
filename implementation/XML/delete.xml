@@ -1,0 +1,43 @@
+let $current_date := current-date()
+
+let $one_year_ago := adjust-date-time($current_date, xs:dayTimeDuration('-P1Y'))
+
+let $six_months_ago := adjust-date-time($current_date, xs:dayTimeDuration('-P6M'))
+
+let $six_years_ago := adjust-date-time($current_date, xs:yearMonthDuration('-P6Y'))
+
+let $order_deletion :=
+    <deletion>
+        <Order>
+            <Date>{ $one_year_ago }</Date>
+            <Status>In Progress</Status>
+        </Order>
+        <Order>
+            <Date>{ $six_months_ago }</Date>
+            <Payment_Method>Credit</Payment_Method>
+            <Total_Cost>{ 0 }</Total_Cost>
+        </Order>
+    </deletion>
+
+let $customer_deletion :=
+    <deletion>
+        <Customer>
+            <Last_Order_Date>{ $six_years_ago }</Last_Order_Date>
+        </Customer>
+    </deletion>
+
+let $employee_deletion :=
+    <deletion>
+        <Employee>
+            <City>Cairo</City>
+            <Salary>
+                <Role>Engineer</Role>
+            </Salary>
+        </Employee>
+    </deletion>
+
+return (
+    $order_deletion,
+    $customer_deletion,
+    $employee_deletion
+)
