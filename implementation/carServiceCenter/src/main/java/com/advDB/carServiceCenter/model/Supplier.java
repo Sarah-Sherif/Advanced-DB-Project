@@ -8,6 +8,7 @@ import lombok.Setter;
 import org.hibernate.annotations.JdbcTypeCode;
 import org.hibernate.type.SqlTypes;
 
+import java.time.LocalDate;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
@@ -30,7 +31,7 @@ public class Supplier extends Person {
     @OneToMany(mappedBy = "supplier", orphanRemoval = true)
     private Set<PurchaseOrder> purchaseOrders = new LinkedHashSet<>();
 
-    public Supplier(Long ssn, String firstName, String middleName, String lastName, String birthDate, String email, String website, String phoneNo) {
+    public Supplier(Long ssn, String firstName, String middleName, String lastName, LocalDate birthDate, String email, String website, String phoneNo) {
         super(ssn, firstName, middleName, lastName, birthDate, email, phoneNo);
     }
 }

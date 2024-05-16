@@ -8,6 +8,8 @@ import com.advDB.carServiceCenter.service.SupplierService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
+
 
 @Service
 public class SupplierServiceImpl implements SupplierService {
@@ -28,7 +30,7 @@ public class SupplierServiceImpl implements SupplierService {
     }
 
     @Override
-    public void insertSupplier(Long ssn, String birthDate, String email, String firstName, String middleName, String lastName, String website, String phoneNo) {
+    public void insertSupplier(Long ssn, LocalDate birthDate, String email, String firstName, String middleName, String lastName, String website, String phoneNo) {
         if (personRepository.findBySsn(ssn).isPresent()) {
             throw new IllegalArgumentException("Supplier with SSN " + ssn + " already exists");
         }

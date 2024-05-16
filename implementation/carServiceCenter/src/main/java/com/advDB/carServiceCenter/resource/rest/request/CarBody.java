@@ -4,9 +4,7 @@ package com.advDB.carServiceCenter.resource.rest.request;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.xml.bind.annotation.XmlRootElement;
-
-@XmlRootElement
+//@XmlRootElement
 @Getter
 @Setter
 public class CarBody {

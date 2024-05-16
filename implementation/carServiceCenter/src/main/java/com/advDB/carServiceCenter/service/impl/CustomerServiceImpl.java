@@ -8,6 +8,7 @@ import com.advDB.carServiceCenter.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -26,7 +27,7 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public void insertCustomer(Long ssn, String birthdate, String email, String firstName, String middleName, String lastName, String city, Integer streetNo, Integer buildingNo, String district, String phoneNo) {
+    public void insertCustomer(Long ssn, LocalDate birthdate, String email, String firstName, String middleName, String lastName, String city, Integer streetNo, Integer buildingNo, String district, String phoneNo) {
         if (customerRepository.findBySsn(ssn).isPresent()) {
             throw new IllegalArgumentException("Customer with SSN " + ssn + " already exists");
         }

@@ -9,6 +9,8 @@ import lombok.Setter;
 import org.hibernate.annotations.JdbcTypeCode;
 import org.hibernate.type.SqlTypes;
 
+import java.time.LocalDate;
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -19,7 +21,7 @@ public class SalesMan extends Employee {
     @JdbcTypeCode(SqlTypes.INTEGER)
     private String salesMade;
 
-    public SalesMan(Long ssn, String firstName, String middleName, String lastName, String birthdate, String phoneNo, String email, Double salary, ServiceCenter serviceCenter) {
+    public SalesMan(Long ssn, String firstName, String middleName, String lastName, LocalDate birthdate, String phoneNo, String email, Double salary, ServiceCenter serviceCenter) {
         super(ssn, firstName, middleName, lastName, birthdate, phoneNo, email, salary, serviceCenter, "SalesMan");
     }
 }

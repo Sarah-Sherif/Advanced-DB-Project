@@ -8,6 +8,7 @@ import lombok.Setter;
 import org.hibernate.annotations.JdbcTypeCode;
 import org.hibernate.type.SqlTypes;
 
+import java.time.LocalDate;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
@@ -29,7 +30,7 @@ public class Engineer extends Employee {
 
 
 
-    public Engineer(Long ssn, String firstName, String middleName, String lastName, String birthdate, String phoneNo, String email, Double salary, ServiceCenter serviceCenter, String specialization) {
+    public Engineer(Long ssn, String firstName, String middleName, String lastName, LocalDate birthdate, String phoneNo, String email, Double salary, ServiceCenter serviceCenter, String specialization) {
         super(ssn, firstName, middleName, lastName, birthdate, phoneNo, email, salary, serviceCenter, "Engineer");
         this.setSpecialization(specialization);
     }

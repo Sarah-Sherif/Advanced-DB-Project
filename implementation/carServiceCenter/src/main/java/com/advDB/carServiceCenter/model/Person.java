@@ -9,6 +9,7 @@ import lombok.Setter;
 import org.hibernate.annotations.JdbcTypeCode;
 import org.hibernate.type.SqlTypes;
 
+import java.time.LocalDate;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
@@ -39,7 +40,7 @@ public class Person {
 
     @Column(name = "birth_date")
     @JdbcTypeCode(SqlTypes.DATE)
-    private String birthDate;
+    private LocalDate birthDate;
 
     @ElementCollection
     @Column(name = "phone_no")
@@ -51,7 +52,7 @@ public class Person {
     @JdbcTypeCode(SqlTypes.VARCHAR)
     private String email;
 
-    public Person(Long ssn, String firstName, String middleName, String lastName, String birthDate, String phoneNo, String email) {
+    public Person(Long ssn, String firstName, String middleName, String lastName, LocalDate birthDate, String phoneNo, String email) {
         this.ssn = ssn;
         this.firstName = firstName;
         this.middleName = middleName;
