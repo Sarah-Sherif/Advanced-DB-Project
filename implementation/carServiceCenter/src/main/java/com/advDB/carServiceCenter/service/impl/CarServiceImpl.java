@@ -10,6 +10,8 @@ import com.advDB.carServiceCenter.service.ModelService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class CarServiceImpl implements CarService {
 
@@ -39,5 +41,10 @@ public class CarServiceImpl implements CarService {
         }
         modelService.insertModel(modelName, modelYear, brand);
         carRepository.save(new Car(plateNo, customerRepository.findBySsn(ssn).get(), modelRepository.findByModelId_ModelNameAndModelId_ModelYear(modelName, modelYear).get()));
+    }
+
+    @Override
+    public List<Car> getAllCars() {
+        return carRepository.findAll();
     }
 }

@@ -27,4 +27,10 @@ public class Engineer extends Employee {
             inverseJoinColumns = @JoinColumn(name = "maintenance_task_id"))
     private Set<MaintenanceTask> maintenanceTasks = new LinkedHashSet<>();
 
+
+
+    public Engineer(Long ssn, String firstName, String middleName, String lastName, String birthdate, String phoneNo, String email, Double salary, ServiceCenter serviceCenter, String specialization) {
+        super(ssn, firstName, middleName, lastName, birthdate, phoneNo, email, salary, serviceCenter, "Engineer");
+        this.setSpecialization(specialization);
+    }
 }

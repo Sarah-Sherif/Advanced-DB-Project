@@ -30,4 +30,7 @@ public class Supplier extends Person {
     @OneToMany(mappedBy = "supplier", orphanRemoval = true)
     private Set<PurchaseOrder> purchaseOrders = new LinkedHashSet<>();
 
+    public Supplier(Long ssn, String firstName, String middleName, String lastName, String birthDate, String email, String website, String phoneNo) {
+        super(ssn, firstName, middleName, lastName, birthDate, email, phoneNo);
+    }
 }

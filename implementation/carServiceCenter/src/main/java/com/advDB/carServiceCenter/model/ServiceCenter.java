@@ -36,11 +36,11 @@ public class ServiceCenter {
 
     @Column(name = "street_no")
     @JdbcTypeCode(SqlTypes.INTEGER)
-    private String streetNo;
+    private Integer streetNo;
 
     @Column(name = "building_no")
     @JdbcTypeCode(SqlTypes.INTEGER)
-    private String buildingNo;
+    private Integer buildingNo;
 
     @OneToMany(mappedBy = "serviceCenter", orphanRemoval = true)
     private Set<Employee> employees = new LinkedHashSet<>();
@@ -52,4 +52,12 @@ public class ServiceCenter {
     @OneToMany(mappedBy = "serviceCenter", orphanRemoval = true)
     private Set<MaintenanceTask> maintenanceTasks = new LinkedHashSet<>();
 
+    public ServiceCenter(String city, String district, Integer streetNo, Integer buildingNo, Employee employee) {
+        this.city = city;
+        this.district = district;
+        this.streetNo = streetNo;
+        this.buildingNo = buildingNo;
+        this.manager = employee;
+        this.employees.add(employee);
+    }
 }

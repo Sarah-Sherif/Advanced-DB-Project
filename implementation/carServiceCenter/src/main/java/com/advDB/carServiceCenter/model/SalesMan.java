@@ -18,4 +18,8 @@ public class SalesMan extends Employee {
     @Column(name = "sales_made")
     @JdbcTypeCode(SqlTypes.INTEGER)
     private String salesMade;
+
+    public SalesMan(Long ssn, String firstName, String middleName, String lastName, String birthdate, String phoneNo, String email, Double salary, ServiceCenter serviceCenter) {
+        super(ssn, firstName, middleName, lastName, birthdate, phoneNo, email, salary, serviceCenter, "SalesMan");
+    }
 }

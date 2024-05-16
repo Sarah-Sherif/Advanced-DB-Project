@@ -26,11 +26,17 @@ public class Employee extends Person {
     private String role;
 
     @Column(name = "salary")
-    @JdbcTypeCode(SqlTypes.FLOAT)
-    private String salary;
+    @JdbcTypeCode(SqlTypes.DOUBLE)
+    private Double salary;
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "center_id", nullable = false)
     private ServiceCenter serviceCenter;
 
+    public Employee(Long ssn, String firstName, String middleName, String lastName, String birthdate, String phoneNo, String email, Double salary, ServiceCenter serviceCenter, String role) {
+        super(ssn, firstName, middleName, lastName, birthdate, phoneNo, email);
+        this.setServiceCenter(serviceCenter);
+        this.setSalary(salary);
+        this.setRole(role);
+    }
 }

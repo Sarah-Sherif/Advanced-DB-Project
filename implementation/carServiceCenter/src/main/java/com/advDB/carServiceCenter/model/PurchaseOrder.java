@@ -25,4 +25,9 @@ public class PurchaseOrder extends Order {
     @JoinColumn(name = "supplier_ssn", nullable = false)
     private Supplier supplier;
 
+    public PurchaseOrder(String status, String paymentMethod, String date, String deliverDate, Supplier supplier) {
+        super(status, paymentMethod, date);
+        this.deliverDate = deliverDate;
+        this.supplier = supplier;
+    }
 }
