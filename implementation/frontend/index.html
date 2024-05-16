@@ -5,13 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Car Service Center</title>
+    <script src="./scripts/xml_script.js"></script>
 </head>
 
 <body>
-    <h1>Car service</h1>
-
-    <button onclick="fetchDataAndCreateTable()">Fetch Data and Create Table</button>
-    <script src="xml_script.js"></script>
+    <a href="employee_form.html">Add employee</a>
+    <a href="customer_form.html">Add customer</a>
+    <button onclick="fetchDataAndCreateTable('employee')">Get all employees</button>
+    <button onclick="fetchDataAndCreateTable('customer')">Get all customers</button>
+    <button onclick="fetchDataAndCreateTable('cars')">Get all suppliers</button>
 </body>
 
 </html>

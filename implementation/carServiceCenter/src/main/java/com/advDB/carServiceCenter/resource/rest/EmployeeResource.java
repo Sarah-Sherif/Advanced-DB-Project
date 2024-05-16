@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/employee")
-@CrossOrigin(origins = "http://localhost:8081")
+@CrossOrigin(origins = "http://*")
 public class EmployeeResource {
 
     @Autowired
