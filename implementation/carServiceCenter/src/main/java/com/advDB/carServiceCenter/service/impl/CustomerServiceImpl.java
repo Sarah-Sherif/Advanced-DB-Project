@@ -8,6 +8,8 @@ import com.advDB.carServiceCenter.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class CustomerServiceImpl implements CustomerService {
 
@@ -30,5 +32,10 @@ public class CustomerServiceImpl implements CustomerService {
         }
         personService.insertPerson(ssn, birthdate, email, firstName, middleName, lastName, phoneNo);
         customerRepository.save(new Customer(ssn, city, streetNo, buildingNo, district, firstName, middleName, lastName, birthdate, phoneNo, email));
+    }
+
+    @Override
+    public List<Customer> getAllCustomers() {
+        return customerRepository.findAll();
     }
 }

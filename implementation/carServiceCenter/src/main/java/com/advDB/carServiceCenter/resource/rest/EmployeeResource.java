@@ -5,10 +5,7 @@ import com.advDB.carServiceCenter.resource.rest.request.EmployeeBody;
 import com.advDB.carServiceCenter.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/employee")
@@ -29,5 +26,9 @@ public class EmployeeResource {
                 employeeBody.getRole(), employeeBody.getSpecialization());
     }
 
+    @GetMapping(produces = MediaType.APPLICATION_XML_VALUE)
+    public void getAllEmployees() {
+        employeeService.getAllEmployees();
+    }
 
 }

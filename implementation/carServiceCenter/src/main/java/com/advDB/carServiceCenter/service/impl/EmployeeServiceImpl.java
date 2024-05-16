@@ -1,5 +1,6 @@
 package com.advDB.carServiceCenter.service.impl;
 
+import com.advDB.carServiceCenter.model.Employee;
 import com.advDB.carServiceCenter.model.Engineer;
 import com.advDB.carServiceCenter.model.SalesMan;
 import com.advDB.carServiceCenter.model.repositories.*;
@@ -8,6 +9,8 @@ import com.advDB.carServiceCenter.service.PersonService;
 import com.advDB.carServiceCenter.service.ServiceCenterService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class EmployeeServiceImpl implements EmployeeService{
@@ -59,5 +62,10 @@ public class EmployeeServiceImpl implements EmployeeService{
         else if (role.equals("SalesMan")) {
             salesManRepository.save(new SalesMan(ssn, firstName, middleName, lastName, birthdate, phoneNo, email, salary, serviceCenterRepository.findByCenterID(centerId).get()));
         }
+    }
+
+    @Override
+    public List<Employee> getAllEmployees() {
+        return employeeRepository.findAll();
     }
 }

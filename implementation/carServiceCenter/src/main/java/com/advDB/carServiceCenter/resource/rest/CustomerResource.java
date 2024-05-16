@@ -5,10 +5,7 @@ import com.advDB.carServiceCenter.service.CustomerService;
 import com.advDB.carServiceCenter.resource.rest.request.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/customer")
@@ -27,5 +24,10 @@ public class CustomerResource {
                 customerBody.getFirstName(), customerBody.getMiddleName(), customerBody.getLastName(),
                 customerBody.getCity(), customerBody.getStreetNo(), customerBody.getBuildingNo(),
                 customerBody.getDistrict(), customerBody.getPhoneNo());
+    }
+
+    @GetMapping(produces = MediaType.APPLICATION_XML_VALUE)
+    public void getAllCustomers() {
+        customerService.getAllCustomers();
     }
 }

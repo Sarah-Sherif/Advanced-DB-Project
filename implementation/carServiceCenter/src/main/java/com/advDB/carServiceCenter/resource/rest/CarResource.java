@@ -4,10 +4,7 @@ import com.advDB.carServiceCenter.resource.rest.request.CarBody;
 import com.advDB.carServiceCenter.service.CarService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/car")
@@ -23,5 +20,10 @@ public class CarResource {
     @PostMapping(consumes = MediaType.APPLICATION_XML_VALUE)
     public void insertCar(@RequestBody CarBody carBody) {
         carService.insertCar(carBody.getPlateNo(), carBody.getModelName(), carBody.getModelYear(), carBody.getBrand(), carBody.getSsn());
+    }
+
+    @GetMapping(produces = MediaType.APPLICATION_XML_VALUE)
+    public void getAllCars() {
+        carService.getAllCars();
     }
 }
