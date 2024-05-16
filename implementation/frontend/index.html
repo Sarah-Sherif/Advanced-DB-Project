@@ -5,15 +5,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Car Service Center</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+        li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
     <script src="./scripts/xml_script.js"></script>
 </head>
 
 <body>
-    <a href="employee_form.html">Add employee</a>
-    <a href="customer_form.html">Add customer</a>
-    <button onclick="fetchDataAndCreateTable('employee')">Get all employees</button>
-    <button onclick="fetchDataAndCreateTable('customer')">Get all customers</button>
-    <button onclick="fetchDataAndCreateTable('cars')">Get all suppliers</button>
+    <h1>Car Service Center</h1>
+    <ul>
+        <li><a href="employee_form.html">Add Employee</a></li>
+        <li><a href="customer_form.html">Add Customer</a></li>
+    </ul>
+    <div class="button-container">
+        <button onclick="fetchDataAndCreateTable('employee')">Get All Employees</button>
+        <button onclick="fetchDataAndCreateTable('customer')">Get All Customers</button>
+        <button onclick="fetchDataAndCreateTable('cars')">Get All Cars</button>
+        <button onclick="fetchDataAndCreateTable('supplier')">Get All Suppliers</button>
+    </div>
 </body>
 
 </html>
