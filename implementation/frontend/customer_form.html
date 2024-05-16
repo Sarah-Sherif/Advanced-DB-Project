@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <form action="http://localhost:8081/customer" method="post">
+    <form id="customer-form">
         <label for="first_name">First Name</label>
         <input type="text" name="first_name" id="first_name">
         <label for="middle_name">Middle Name</label>
@@ -32,9 +32,21 @@
         <input type="text" name="district" id="district">
         <label for="phone_no">Phone Number</label>
         <input type="tel" name="phone_no" id="phone_no">
-        <input type="submit">
+        <button type="button" onclick="send()">submit</button>
     </form>
-    <script src="./scripts/customer_form.js"></script>
+    <script>
+        function send(event) {
+            const form = document.getElementById('customer-form');
+            const formData = new FormData(form);
+            console.log(formData)
+            fetch('http://localhost:8081/customer', {
+                method: 'POST',
+                body: formData
+            }).then(() => {
+                console.log("yarab")
+            })
+        }
+    </script>
 </body>
 
 </html>
