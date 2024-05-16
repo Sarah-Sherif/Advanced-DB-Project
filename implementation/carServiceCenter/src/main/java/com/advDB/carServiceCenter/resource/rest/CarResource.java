@@ -18,7 +18,7 @@ public class CarResource {
         this.carService = carService;
     }
 
-    @PostMapping(consumes = MediaType.APPLICATION_XML_VALUE)
+    @PostMapping(consumes = MediaType.APPLICATION_XML_VALUE, produces = MediaType.APPLICATION_XML_VALUE)
     public void insertCar(@RequestBody CarBody carBody) {
         carService.insertCar(carBody.getPlateNo(), carBody.getModelName(), carBody.getModelYear(), carBody.getBrand(), carBody.getSsn());
     }

@@ -10,6 +10,7 @@ import com.advDB.carServiceCenter.service.ServiceCenterService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -47,7 +48,7 @@ public class EmployeeServiceImpl implements EmployeeService{
     }
 
     @Override
-    public void insertEmployee(Long ssn, String birthdate, String email, String firstName, String middleName, String lastName, String phoneNo, Double salary, Integer centerId, String role, String specialization) {
+    public void insertEmployee(Long ssn, LocalDate birthdate, String email, String firstName, String middleName, String lastName, String phoneNo, Double salary, Integer centerId, String role, String specialization) {
         if (personRepository.findBySsn(ssn).isPresent()) {
             throw new IllegalArgumentException("Employee with SSN " + ssn + " already exists");
         }
