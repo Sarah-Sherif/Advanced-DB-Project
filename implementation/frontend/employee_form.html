@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Form</title>
+    <link rel="stylesheet" href="./sytles/styles.css">
+</head>
+
+<body>
+    <form action="/" method="post" id="employee-form">
+        <label for="first_name">First Name</label>
+        <input type="text" name="first_name" id="first_name">
+        <label for="middle_name">Middle Name</label>
+        <input type="text" name="middle_name" id="middle_name">
+        <label for="last_name">Last Name</label>
+        <input type="text" name="last_name" id="last_name">
+        <label for="ssn">SSN</label>
+        <input type="text" name="ssn" id="ssn">
+        <label for="phone_no">Phone Number</label>
+        <input type="text" name="phone_no" id="phone_no">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email">
+        <label for="role">Role</label>
+        <select name="role" id="role">
+            <option value="engineer">Engineer</option>
+            <option value="sales_man">Sales Man</option>
+        </select>
+        <label for="specialization" id="specialization-label">Specialization</label>
+        <input type="text" name="specialization" id="specialization">
+        <button type="button" onclick="submitForm()">Submit</button>
+    </form>
+    <script src="./scripts/empolyee_form.js"></script>
+</body>
+
+</html>
