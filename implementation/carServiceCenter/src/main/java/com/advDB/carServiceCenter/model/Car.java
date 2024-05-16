@@ -1,5 +1,6 @@
 package com.advDB.carServiceCenter.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -27,6 +28,7 @@ public class Car {
     private Customer customer;
 
     @OneToMany(mappedBy = "car", orphanRemoval = true)
+    @JsonIgnore
     private Set<MaintenanceTask> maintenanceTasks = new LinkedHashSet<>();
 
     @ManyToOne(optional = false)
