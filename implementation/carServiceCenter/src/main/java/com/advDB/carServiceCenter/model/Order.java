@@ -34,4 +34,9 @@ public class Order {
     @JdbcTypeCode(SqlTypes.DATE)
     private String date;
 
+    public Order(String status, String paymentMethod, String date) {
+        this.status = status;
+        this.paymentMethod = paymentMethod;
+        this.date = date;
+    }
 }

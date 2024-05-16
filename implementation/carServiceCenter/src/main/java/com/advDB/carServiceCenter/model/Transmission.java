@@ -18,4 +18,9 @@ public class Transmission extends Component {
     @Column(name = "transmission_type")
     @JdbcTypeCode(SqlTypes.VARCHAR)
     private String transmissionType;
+
+    public Transmission(String model, String transmissionType, Double price) {
+        super(model, price);
+        this.setTransmissionType(transmissionType);
+    }
 }
