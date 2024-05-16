@@ -22,10 +22,10 @@ public class BatteryServiceImpl implements BatteryService {
     }
 
     @Override
-    public void insertBattery(String model, String expiryDate) {
+    public void insertBattery(String model, String expiryDate, Double price) {
         if (componentRepository.findByComponentModel(model).isEmpty()) {
             throw new IllegalArgumentException("Battery with model " + model + " does not exist");
         }
-        batteryRepository.save(new Battery(model, expiryDate));
+        batteryRepository.save(new Battery(model, expiryDate, price));
     }
 }

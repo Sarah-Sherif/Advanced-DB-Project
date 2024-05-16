@@ -30,11 +30,11 @@ public class RepairOrder extends Order {
 
     @Column(name = "street_no")
     @JdbcTypeCode(SqlTypes.INTEGER)
-    private String streetNo;
+    private Integer streetNo;
 
     @Column(name = "building_no")
     @JdbcTypeCode(SqlTypes.INTEGER)
-    private String buildingNo;
+    private Integer buildingNo;
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "customer_ssn", nullable = false)
@@ -43,4 +43,12 @@ public class RepairOrder extends Order {
     @OneToMany(mappedBy = "repairOrder", orphanRemoval = true)
     private Set<MaintenanceTask> maintenanceTasks = new LinkedHashSet<>();
 
+    public RepairOrder(String city, String district, Integer buildingNo, Customer customer, MaintenanceTask maintenanceTask) {
+        super();
+        this.city = city;
+        this.district = district;
+        this.buildingNo = buildingNo;
+        this.customer = customer;
+        this.maintenanceTasks.add(maintenanceTask);
+    }
 }

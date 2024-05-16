@@ -52,4 +52,12 @@ public class MaintenanceTask {
     @JoinColumn(name = "repair_order_id", nullable = false)
     private RepairOrder repairOrder;
 
+    public MaintenanceTask(String taskDate, Double price, ServiceCenter serviceCenter, Car car, RepairOrder repairOrder, Component component) {
+        this.taskDate = taskDate;
+        this.price = price;
+        this.serviceCenter = serviceCenter;
+        this.car = car;
+        this.repairOrder = repairOrder;
+        this.component = component;
+    }
 }

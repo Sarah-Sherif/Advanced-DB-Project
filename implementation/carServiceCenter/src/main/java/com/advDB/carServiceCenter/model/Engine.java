@@ -20,6 +20,12 @@ public class Engine extends Component {
     private String lubricantType;
 
     @Column(name = "horse_power")
-    @JdbcTypeCode(SqlTypes.FLOAT)
-    private String horsePower;
+    @JdbcTypeCode(SqlTypes.INTEGER)
+    private Integer horsePower;
+
+    public Engine(String model, String lubricantType, int horsePower, Double price){
+        super(model, price);
+        this.setLubricantType(lubricantType);
+        this.setHorsePower(horsePower);
+    }
 }
