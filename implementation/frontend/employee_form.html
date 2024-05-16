@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <form action="/" method="post" id="employee-form">
+    <form action="http://localhost:8081/employee" method="post">
         <label for="first_name">First Name</label>
         <input type="text" name="first_name" id="first_name">
         <label for="middle_name">Middle Name</label>
@@ -29,7 +29,7 @@
         </select>
         <label for="specialization" id="specialization-label">Specialization</label>
         <input type="text" name="specialization" id="specialization">
-        <button type="button" onclick="submitForm()">Submit</button>
+        <input type="submit">
     </form>
     <script src="./scripts/empolyee_form.js"></script>
 </body>

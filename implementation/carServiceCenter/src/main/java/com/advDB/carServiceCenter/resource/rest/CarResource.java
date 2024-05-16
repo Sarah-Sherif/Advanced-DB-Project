@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/car")
-@CrossOrigin(origins = "http://localhost:8081")
+@CrossOrigin(origins = "http://*")
 public class CarResource {
 
     @Autowired

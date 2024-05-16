@@ -9,13 +9,16 @@ function formDataToXml(formData) {
 }
 
 function submitForm() {
+	console.log("submitting form");
 	const form = document.getElementById("employee-form");
 	const formData = new FormData(form);
 	const xml = formDataToXml(formData);
 	console.log(xml);
-	fetch("", {
+	fetch("http://localhost:8081/employee", {
 		method: "POST",
 		body: xml,
+	}).then((res) => {
+		console.log(res);
 	});
 }
 

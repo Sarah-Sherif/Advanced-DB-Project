@@ -1,20 +1,26 @@
-function convertFormDataToXML(formData) {
-	let xml = "";
-	for (var key in formData) {
-		xml += "<" + key + ">";
-		xml += formData[key];
-		xml += "</" + key + ">";
-	}
-	return xml;
+function formDataToXml(formData) {
+	var xmlDoc = document.createElement("employee");
+	formData.forEach(function (value, key) {
+		var element = document.createElement(key);
+		element.textContent = value;
+		xmlDoc.appendChild(element);
+	});
+	return xmlDoc;
 }
 
 // on submitting the form, convert the form data to XML and send to server
 function submitForm() {
-	form = document.getElementById;
-	const xml = convertFormDataToXML(form);
-	fetch("/api/submit", {
+	form = document.getElementById("customer-form");
+	const formData = new FormData(form);
+	const xml = formDataToXml(formData);
+	const xmlString = new XMLSerializer().serializeToString(xml);
+	console.log(xml);
+	fetch("http://localhost:8081/customer", {
 		method: "POST",
 		body: xml,
+		headers: {
+			"Content-Type": "application/xml",
+		},
 	});
 	console.log(xml);
 }
