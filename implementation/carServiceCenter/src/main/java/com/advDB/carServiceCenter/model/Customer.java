@@ -2,7 +2,6 @@ package com.advDB.carServiceCenter.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.OneToMany;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,8 +10,6 @@ import org.hibernate.annotations.JdbcTypeCode;
 import org.hibernate.type.SqlTypes;
 
 import java.time.LocalDate;
-import java.util.LinkedHashSet;
-import java.util.Set;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -36,11 +33,11 @@ public class Customer extends Person {
     @JdbcTypeCode(SqlTypes.INTEGER)
     private Integer buildingNo;
 
-    @OneToMany(mappedBy = "customer", orphanRemoval = true)
-    private Set<Car> cars = new LinkedHashSet<>();
+//    @OneToMany(mappedBy = "customer", orphanRemoval = true)
+//    private Set<Car> cars = new LinkedHashSet<>();
 
-    @OneToMany(mappedBy = "customer", orphanRemoval = true)
-    private Set<RepairOrder> repairOrders = new LinkedHashSet<>();
+//    @OneToMany(mappedBy = "customer", orphanRemoval = true)
+//    private Set<RepairOrder> repairOrders = new LinkedHashSet<>();
 
     public Customer(Long ssn, String city, Integer streetNo, Integer buildingNo, String district, String firstName, String middleName, String lastName, LocalDate birthDate, String phoneNo, String email) {
         super(ssn, firstName, middleName, lastName, birthDate, phoneNo, email);

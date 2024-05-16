@@ -1,5 +1,6 @@
 package com.advDB.carServiceCenter.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -29,6 +30,7 @@ public class Employee extends Person {
     private Double salary;
 
     @ManyToOne(optional = false)
+    @JsonIgnore
     @JoinColumn(name = "center_id", nullable = false)
     private ServiceCenter serviceCenter;
 
